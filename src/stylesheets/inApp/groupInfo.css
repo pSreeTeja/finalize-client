@@ -1,0 +1,49 @@
+.GroupInfoMainDiv {
+}
+.sectionsDiv {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.listDiv {
+  overflow-y: auto;
+}
+.notifyButtonDiv {
+  display: flex;
+  justify-content: flex-end;
+}
+.notifyAllButton {
+  padding: 8px 8px;
+  width: 10%;
+  font-size: 20px;
+  background-color: #52d452;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+.submitted,
+.duplicates,
+.approved,
+.about,
+.addDetailsButton {
+  margin-top: 10px;
+  width: fit-content;
+  padding: 8px 12px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  box-shadow: rgba(153, 152, 189, 0.35) 0pc 5px 15px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  margin: 22px;
+}
+.active {
+  background-color: #2664ec;
+  color: white;
+}

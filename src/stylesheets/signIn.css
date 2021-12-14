@@ -1,0 +1,73 @@
+::placeholder {
+  color: #7a7979;
+}
+.signInMainDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.signInWithMediaDiv,
+.signInContinueWithDiv {
+  display: flex;
+  flex-direction: row;
+  margin-top: 4%;
+}
+.orContinueWithText {
+  margin: 5px;
+}
+
+.emailInput,
+.passwordInput {
+  padding: 20px 10px;
+  color: black;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  background-color: #e9f0f8;
+  width: 80%;
+  margin: 10px;
+  outline: none;
+  font-size: 16px;
+}
+.forgotPasswordDiv {
+  width: 84%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.forgotPasswordLink {
+  text-decoration: none;
+  color: #7a7979;
+  margin-bottom: 5%;
+}
+.signInButtonInComponent {
+  padding: 10px 10px;
+  width: 84%;
+  font-size: 20px;
+  background-color: #4561f1;
+  border: none;
+  color: white;
+  border-radius: 15px;
+  box-shadow: rgba(69, 97, 241, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  margin-bottom: 4%;
+}
+.errorMsg {
+  color: #880808;
+}
+
+.googleLogoSignIn,
+.facebookLogoSignIn {
+  padding: 10px 20px;
+  height: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.googleLogoSignIn:hover,
+.facebookLogoSignIn:hover {
+  background-color: #d1d1d1;
+}

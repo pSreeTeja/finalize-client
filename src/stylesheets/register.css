@@ -1,0 +1,72 @@
+::placeholder {
+  color: #7a7979;
+}
+.registerMainDiv {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+.studentOrTeacherSelectDiv {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+.selectFormRegister {
+  margin-left: 23%;
+  margin-bottom: 5%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.registerOrContinueWithDiv,
+.registerWithSocials {
+  display: flex;
+  flex-direction: row;
+}
+
+.nameInput,
+.emailInput,
+.passwordInput,
+.confirmPasswordInput {
+  padding: 16px 10px;
+  color: black;
+  font-weight: 600;
+  border-radius: 10px;
+  width: 80%;
+  margin: 8px;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  background-color: #e9f0f8;
+}
+.registerInButtonComponent {
+  padding: 10px 10px;
+  width: 84%;
+  font-size: 20px;
+  background-color: #4561f1;
+  border-radius: 15px;
+  box-shadow: rgba(69, 97, 241, 0.35) 0pc 5px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 8%;
+  margin-top: 4%;
+}
+.googleLogoRegister,
+.facebookLogoRegister {
+  padding: 10px 20px;
+  height: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.googleLogoRegister:hover,
+.facebookLogoRegister:hover {
+  background-color: #d1d1d1;
+}
+.registerWithSocials {
+  margin-top: 6%;
+}

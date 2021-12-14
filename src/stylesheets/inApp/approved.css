@@ -1,0 +1,37 @@
+.buttonDiv,
+.commentDiv {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  cursor: pointer;
+  margin-left: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition-duration: 0.1s;
+}
+.commentButton {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.abstractDiv {
+  width: 60%;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+.statusLogo {
+  width: 20px;
+}
+.button {
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+}
+.green {
+  background-color: #52d452;
+  color: white;
+}
+.blue {
+  background-color: #4561f1;
+  color: white;
+}

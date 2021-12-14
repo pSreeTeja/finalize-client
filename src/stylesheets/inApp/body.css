@@ -1,0 +1,33 @@
+.bodyDiv {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 100px);
+  padding-top: 3%;
+}
+.contentArea {
+  background-color: #f9fbfc;
+  box-sizing: border-box;
+  padding: 5px 30px;
+  display: flex;
+  flex-direction: column;
+  font-size: 24px;
+  width: 100%;
+}
+
+.createGroupHeading {
+  margin-left: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}
+.headingForDiv {
+  padding-bottom: 25px;
+  border-bottom: 0.1px solid rgb(218, 218, 218);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 50px;
+}
+.projectDeadline {
+  margin-right: 2%;
+}

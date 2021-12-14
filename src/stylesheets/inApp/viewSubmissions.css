@@ -1,0 +1,49 @@
+.projectTitleDv,
+.abstractProjectDiv,
+.prototypeDiv,
+.commentsProjectDiv,
+.teamMembersDiv,
+.linkProjectDiv {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+}
+.projectNameText {
+  font-weight: bold;
+  margin-right: 25px;
+}
+.abstractText,
+.teamMembers,
+.commentsText,
+.link {
+  font-weight: bold;
+  margin-right: 70px;
+}
+.prototypeText {
+  font-weight: bold;
+  margin-right: 70px;
+}
+.commentsField {
+  font-size: 24px;
+  /* margin-left: 65px; */
+  border-radius: 9px;
+  height: 150px;
+  width: 60%;
+  border: none;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  resize: none;
+}
+.name {
+  margin-top: 10px;
+  width: 70%;
+  padding: 8px;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: rgba(153, 152, 189, 0.35) 0pc 5px 15px;
+  border: none;
+  margin: 22px;
+}

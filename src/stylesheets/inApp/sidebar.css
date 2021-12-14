@@ -1,0 +1,76 @@
+.sidebarMainDiv {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 100vh;
+  border-right: 0.1px solid #c7c7c7;
+  justify-content: space-between;
+  font-size: 20px;
+  box-sizing: border-box;
+  padding: 1%;
+}
+.inAppLogo {
+  height: 48px;
+  margin-right: 5px;
+}
+.inAppNameDiv {
+  display: flex;
+}
+.appNameText {
+  font-weight: 600;
+}
+.workspaceText {
+  font-size: 16px;
+  color: #666666;
+}
+
+.inApplogoAndNameDiv {
+  display: flex;
+  flex-direction: row;
+}
+.inAppNameDiv {
+  display: flex;
+  flex-direction: column;
+}
+.topDivSidebarSection {
+  display: flex;
+  align-items: center;
+  margin-top: 10%;
+}
+.activitySection {
+  margin-top: 20%;
+}
+.sectionLogo {
+  margin-right: 5px;
+}
+.sectionName,
+.sectionLogo {
+  cursor: pointer;
+}
+.lineUnderActivityDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15%;
+}
+.bottomDivSidebarSection {
+  display: flex;
+  align-items: center;
+  margin-top: 10%;
+}
+.createNewButton {
+  cursor: pointer;
+  padding: 10px 15px;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  background-color: #2664ec;
+  color: white;
+  transition-duration: 0.1s;
+}
+.createNewButton:hover {
+  background-color: #0051ff;
+}
+.settingsSection {
+  margin-bottom: 10%;
+}

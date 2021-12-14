@@ -1,0 +1,143 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+}
+.logoAndAppNameDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.logo {
+  border-right: 0.2px solid black;
+  padding-right: 10px;
+  margin-right: 10px;
+  height: 48px;
+  margin-left: 15%;
+}
+.appName {
+  font-weight: bold;
+  font-size: 22px;
+}
+.headerButtonsDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 20%;
+  margin-right: 7%;
+}
+
+.headerButton {
+  font-size: 18px;
+  font-weight: bold;
+}
+.signInButtonDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.borderBottom {
+  background-color: #4561f1;
+  width: 40px;
+  height: 4px;
+  border-radius: 10px;
+}
+.borderInactive {
+  background-color: #818589;
+}
+.signInButton {
+  color: #4561f1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+.signInInactive {
+  color: #818589;
+}
+.registerButton {
+  background-color: white;
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+  margin-left: 30%;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding-left: 15px;
+  padding-right: 15px;
+  cursor: pointer;
+  transition-duration: 0.1s;
+}
+.registerActive {
+  background-color: #4561f1;
+  color: white;
+}
+.registerButton:hover {
+  background-color: #4561f1;
+  color: white;
+}
+.landingPageImageDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 3.5%;
+}
+.landingPageText {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+.landingPageImage {
+  height: 480px;
+}
+.landingPageBodyDiv {
+  display: flex;
+  flex-direction: row;
+  padding: 4% 5%;
+}
+.signInRegisterContainerDiv {
+  margin-left: 12%;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #818589;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footerLogoDiv {
+  display: flex;
+  width: fit-content;
+  margin-left: 10%;
+}
+.logoFooter {
+  height: 40px;
+  margin-right: 10px;
+}
+.appNameAndTaglineDiv {
+  display: flex;
+  flex-direction: column;
+}
+.appNameFooter {
+  font-size: 18px;
+  font-weight: bold;
+}
+.taglineFooter {
+  font-size: 14px;
+}
+.contactFooterDiv {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10%;
+}
+.contactHeadingFooter {
+  font-weight: bold;
+}
+.contactMediaLogo {
+  height: 24px;
+}

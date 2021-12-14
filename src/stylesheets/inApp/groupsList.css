@@ -1,0 +1,9 @@
+.groupsListMainDiv {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  overflow-y: auto;
+  justify-content: flex-start;
+}

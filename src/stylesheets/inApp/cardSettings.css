@@ -1,0 +1,17 @@
+.cardSettingDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.cardSettingsIcon,
+.deleteicon {
+  margin: 5px 8px;
+}
+.deleteicon {
+  height: 24px;
+}
+
+.cardSettingsIcon {
+  height: 24px;
+}

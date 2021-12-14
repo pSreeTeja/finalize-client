@@ -1,0 +1,41 @@
+.invitePageMainDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.inviteButton {
+  margin-top: 75px;
+  width: 20%;
+  padding: 10px 5px;
+  font-size: 25px;
+  background-color: #2664ec;
+  box-shadow: rgba(69, 97, 241, 0.35) 0px 5px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.inviteAppLogo {
+  height: 48px;
+  margin-right: 5px;
+}
+.inviteAppNameDiv {
+  display: flex;
+}
+.appNameText {
+  font-weight: 600;
+}
+.workspaceText {
+  font-size: 16px;
+  color: #666666;
+}
+
+.inviteApplogoAndNameDiv {
+  display: flex;
+  flex-direction: row;
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.inviteAppNameDiv {
+  display: flex;
+  flex-direction: column;
+}

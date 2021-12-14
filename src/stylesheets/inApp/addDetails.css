@@ -1,0 +1,85 @@
+.addMainDiv {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+.addprojectTitleDv,
+.addLinkProjectDiv,
+.addAbstractProjectDiv,
+.addTeamMembersDiv {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.abstractField {
+  font-size: 18px;
+  margin-left: 90px;
+  height: 150px;
+  width: 60%;
+  border: none;
+
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  resize: none;
+}
+.aboutProjectField {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  font-size: 18px;
+  width: 60%;
+  height: 40px;
+  margin-left: 50px;
+}
+.abstractField,
+.aboutProjectField {
+  border: none;
+  padding: 10px;
+}
+
+.membersField1,
+.membersField2,
+.membersField3,
+.membersField4 {
+  padding: 9px;
+  width: 15%;
+  font-size: 18px;
+
+  background-color: white;
+  box-shadow: rgba(153, 152, 189, 0.35) 0pc 5px 15px;
+  border: none;
+  margin-left: 45px;
+}
+.addLinkField {
+  padding: 6px;
+  font-size: 18px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: rgba(153, 152, 189, 0.35) 0pc 5px 15px;
+  border: none;
+  width: 40%;
+  margin-left: 10%;
+}
+.addProjectNameText,
+.addAbstractText,
+.addTeamMembers,
+.addLink {
+  font-weight: bold;
+}
+.buttonsDiv {
+  display: flex;
+  justify-content: center;
+}
+.saveButton,
+.submitButton {
+  margin-top: 50px;
+  width: 8%;
+  padding: 10px 5px;
+  font-size: 20px;
+  background-color: #2664ec;
+  box-shadow: rgba(69, 97, 241, 0.35) 0pc 5px 15px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+.submitButton {
+  margin-left: 2%;
+}

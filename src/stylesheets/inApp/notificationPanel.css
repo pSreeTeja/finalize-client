@@ -1,0 +1,39 @@
+.notificationPanelMainDiv {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 350px;
+  border: 0.2px solid #b1b1b1;
+  padding: 5px 5px;
+  background-color: white;
+
+  overflow-y: auto;
+}
+.markAllReadButtonDiv {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 0.5px solid #737373;
+  padding: 5px 5px;
+  background-color: white;
+}
+.markAllReadButton {
+  width: 60%;
+  background-color: #c7cff9;
+  padding: 5px 5px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.eachNotificationDiv {
+  background-color: white;
+  margin: 5px;
+  padding: 5px;
+  color: #5279d4;
+  border-bottom: 0.5px solid #e4e4e4;
+}
+.noBorderBottom {
+  border-bottom: none;
+  background-color: red;
+}

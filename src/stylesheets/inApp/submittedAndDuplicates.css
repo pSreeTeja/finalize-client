@@ -1,0 +1,84 @@
+.listProjects {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+  background-color: white;
+  box-sizing: border-box;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.leftDiv {
+  width: 50%;
+}
+.serialNumber {
+  font-size: 20px;
+}
+.projectNameDiv {
+  font-size: 20px;
+}
+.projectTitle {
+  font-weight: bold;
+}
+.rollNumbersDiv {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rightDiv {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-between;
+}
+.abstractDiv {
+  width: 60%;
+  font-size: 16px;
+  word-wrap: break-word;
+}
+.approvedDiv .options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: black;
+}
+.acceptDiv,
+.declineDiv,
+.comments {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  padding: 8px;
+  cursor: pointer;
+  margin-left: 16px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 1px 8px;
+}
+.accept,
+.decline,
+.comments {
+  border: none;
+  background-color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+.comments {
+  padding: 9px;
+}
+
+.submitted,
+.duplicates,
+.approved,
+.about {
+  width: 18%;
+  padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  background-color: white;
+  box-shadow: rgba(153, 152, 189, 0.35) 0pc 5px 15px;
+  border: none;
+  color: black;
+  cursor: pointer;
+}

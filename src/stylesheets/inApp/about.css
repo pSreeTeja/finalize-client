@@ -1,0 +1,11 @@
+.projectTitleDiv,
+.aboutProjectDiv,
+.groupLinkDiv {
+  margin: 22px;
+}
+.projectTitleText,
+.aboutText,
+.groupLinkText {
+  font-weight: bold;
+  margin-right: 10px;
+}
