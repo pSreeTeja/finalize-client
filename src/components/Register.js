@@ -15,10 +15,7 @@ class Register extends React.Component {
   };
   verifyPass = () => {
     // console.log("inVerifyPass");
-    if (
-      this.state.pass != this.state.re_pass ||
-      !validator.isEmail(this.state.email)
-    ) {
+    if (this.state.pass != this.state.re_pass) {
       // console.log("Not equal");
       this.setState({ errMsg: "Please provide valid details" });
     } else {
