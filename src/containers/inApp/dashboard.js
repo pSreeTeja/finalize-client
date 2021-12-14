@@ -8,9 +8,9 @@ class Dashboard extends React.Component {
   userData = {};
   getData = async () => {
     try {
-      const res = await fetch("/data", {
+      const res = await fetch(`${process.env.API_URL}/data`, {
         method: "GET",
-        mode: "cors",
+
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -32,9 +32,9 @@ class Dashboard extends React.Component {
   };
   getGroups = async () => {
     try {
-      const res = await fetch("/displaygroups", {
+      const res = await fetch(`${process.env.API_URL}/displaygroups`, {
         method: "GET",
-        mode: "cors",
+
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

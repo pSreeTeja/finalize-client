@@ -6,9 +6,9 @@ class SubmittedAndDuplicates extends React.Component {
   approveProject = async (data) => {
     // console.log("DATA FROM ACCEPT CLICK");
     // console.log(data);
-    const p = await fetch("/updatestudentproject", {
+    const p = await fetch(`${process.env.API_URL}/updatestudentproject`, {
       method: "POST",
-      mode: "cors",
+
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -32,9 +32,9 @@ class SubmittedAndDuplicates extends React.Component {
     }).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
   };
   rejectProject = async (data) => {
-    const p = await fetch("/rejectproject", {
+    const p = await fetch(`${process.env.API_URL}/rejectproject`, {
       method: "POST",
-      mode: "cors",
+
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

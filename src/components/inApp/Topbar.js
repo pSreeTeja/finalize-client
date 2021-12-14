@@ -19,9 +19,9 @@ class Topbar extends React.Component {
   //   });
   // };
   logoutUser = async () => {
-    await fetch("/logout", {
+    await fetch(`${process.env.API_URL}/logout`, {
       method: "GET",
-      mode: "cors",
+
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -33,9 +33,9 @@ class Topbar extends React.Component {
   };
   getUserDetails = async () => {
     try {
-      const res = await fetch("/data", {
+      const res = await fetch(`${process.env.API_URL}/data`, {
         method: "GET",
-        mode: "cors",
+
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

@@ -15,9 +15,9 @@ class GroupInfo extends React.Component {
   };
   getUserDetails = async () => {
     try {
-      const res = await fetch("/data", {
+      const res = await fetch(`${process.env.API_URL}/data`, {
         method: "GET",
-        mode: "cors",
+
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

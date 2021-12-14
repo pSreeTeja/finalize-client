@@ -26,9 +26,9 @@ class LandingPage extends React.Component {
     this.setState({ signInDisplay: false, registerDisplay: true });
   };
   loginUser = async () => {
-    const response = await fetch("/login", {
+    const response = await fetch(`${process.env.API_URL}/login`, {
       method: "POST",
-      mode: "cors",
+
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
@@ -56,9 +56,9 @@ class LandingPage extends React.Component {
     );
   };
   registerUser = () => {
-    const response = fetch("/register", {
+    const response = fetch(`${process.env.API_URL}/register`, {
       method: "POST",
-      mode: "cors",
+
       headers: {
         "Content-Type": "application/json",
       },

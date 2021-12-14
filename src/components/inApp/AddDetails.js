@@ -19,9 +19,9 @@ class AddDetails extends React.Component {
 
   getUserDetails = async () => {
     try {
-      const res = await fetch("/data", {
+      const res = await fetch(`${process.env.API_URL}/data`, {
         method: "GET",
-        mode: "cors",
+
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -47,9 +47,9 @@ class AddDetails extends React.Component {
       .then(async () => {
         // console.log("EMAIL FETCHED IS" + this.state.email);
         if (this.props.myTeamDetails.didAdd) {
-          const p = await fetch("/updatestudentproject", {
+          const p = await fetch(`${process.env.API_URL}/updatestudentproject`, {
             method: "POST",
-            mode: "cors",
+
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
@@ -74,9 +74,9 @@ class AddDetails extends React.Component {
             window.open("https://finalize.netlify.app/dashboard", "_top")
           );
         } else {
-          const p = await fetch("/addstudentproject", {
+          const p = await fetch(`${process.env.API_URL}/addstudentproject`, {
             method: "POST",
-            mode: "cors",
+
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
@@ -107,9 +107,9 @@ class AddDetails extends React.Component {
       alert("Please provide a valid Project Link");
       return;
     }
-    const p = await fetch("/submitproject", {
+    const p = await fetch(`${process.env.API_URL}/submitproject`, {
       method: "POST",
-      mode: "cors",
+
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
