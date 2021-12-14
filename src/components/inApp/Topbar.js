@@ -19,7 +19,7 @@ class Topbar extends React.Component {
   //   });
   // };
   logoutUser = async () => {
-    await fetch(`${process.env.API_URL}/logout`, {
+    await fetch(` https://finalize.herokuapp.com/logout`, {
       method: "GET",
 
       headers: {
@@ -33,7 +33,7 @@ class Topbar extends React.Component {
   };
   getUserDetails = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/data`, {
+      const res = await fetch(` https://finalize.herokuapp.com/data`, {
         method: "GET",
 
         headers: {

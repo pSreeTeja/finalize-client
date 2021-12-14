@@ -18,17 +18,20 @@ class EachGroupCard extends React.Component {
   //   }
   // };
   deleteGroup = async (_id) => {
-    const response = await fetch(`${process.env.API_URL}/deletegroup`, {
-      method: "POST",
+    const response = await fetch(
+      ` https://finalize.herokuapp.com/deletegroup`,
+      {
+        method: "POST",
 
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        _id: _id,
-      }),
-    }).then((res) => {
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          _id: _id,
+        }),
+      }
+    ).then((res) => {
       window.open("https://finalize.netlify.app/dashboard", "_top");
       // console.log("CLIENT: DELTED ");
     });

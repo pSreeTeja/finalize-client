@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
   userData = {};
   getData = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/data`, {
+      const res = await fetch(` https://finalize.herokuapp.com/data`, {
         method: "GET",
 
         headers: {
@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
   };
   getGroups = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/displaygroups`, {
+      const res = await fetch(` https://finalize.herokuapp.com/displaygroups`, {
         method: "GET",
 
         headers: {

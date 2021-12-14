@@ -15,7 +15,7 @@ class GroupInfo extends React.Component {
   };
   getUserDetails = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/data`, {
+      const res = await fetch(` https://finalize.herokuapp.com/data`, {
         method: "GET",
 
         headers: {

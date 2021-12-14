@@ -19,7 +19,7 @@ class AddDetails extends React.Component {
 
   getUserDetails = async () => {
     try {
-      const res = await fetch(`${process.env.API_URL}/data`, {
+      const res = await fetch(` https://finalize.herokuapp.com/data`, {
         method: "GET",
 
         headers: {
@@ -47,58 +47,60 @@ class AddDetails extends React.Component {
       .then(async () => {
         // console.log("EMAIL FETCHED IS" + this.state.email);
         if (this.props.myTeamDetails.didAdd) {
-          const p = await fetch(`${process.env.API_URL}/updatestudentproject`, {
-            method: "POST",
+          const p = await fetch(
+            ` https://finalize.herokuapp.com/updatestudentproject`,
+            {
+              method: "POST",
 
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            credentials: "include",
-            body: JSON.stringify({
-              _id: this.props.groupData._id, //because to add into that particular group
-              email: this.state.email,
-              projectTitle: this.state.projectTitle,
-              abstract: this.state.abstract,
-              teamMem1: this.state.teamMem1,
-              teamMem2: this.state.teamMem2,
-              teamMem3: this.state.teamMem3,
-              teamMem4: this.state.teamMem4,
-              projectLink: this.state.projectLink,
-              didAdd: true,
-              isApproved: false,
-              completed: false,
-              isEditDetails: true,
-            }),
-          }).then(
-            window.open("https://finalize.netlify.app/dashboard", "_top")
-          );
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              credentials: "include",
+              body: JSON.stringify({
+                _id: this.props.groupData._id, //because to add into that particular group
+                email: this.state.email,
+                projectTitle: this.state.projectTitle,
+                abstract: this.state.abstract,
+                teamMem1: this.state.teamMem1,
+                teamMem2: this.state.teamMem2,
+                teamMem3: this.state.teamMem3,
+                teamMem4: this.state.teamMem4,
+                projectLink: this.state.projectLink,
+                didAdd: true,
+                isApproved: false,
+                completed: false,
+                isEditDetails: true,
+              }),
+            }
+          ).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
         } else {
-          const p = await fetch(`${process.env.API_URL}/addstudentproject`, {
-            method: "POST",
+          const p = await fetch(
+            ` https://finalize.herokuapp.com/addstudentproject`,
+            {
+              method: "POST",
 
-            headers: {
-              "Content-Type": "application/json",
-              Accept: "application/json",
-            },
-            credentials: "include",
-            body: JSON.stringify({
-              _id: this.props.groupData._id, //because to add into that particular group
-              email: this.state.email,
-              projectTitle: this.state.projectTitle,
-              abstract: this.state.abstract,
-              teamMem1: this.state.teamMem1,
-              teamMem2: this.state.teamMem2,
-              teamMem3: this.state.teamMem3,
-              teamMem4: this.state.teamMem4,
-              projectLink: this.state.projectLink,
-              didAdd: true,
-              isApproved: false,
-              completed: false,
-            }),
-          }).then(
-            window.open("https://finalize.netlify.app/dashboard", "_top")
-          );
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json",
+              },
+              credentials: "include",
+              body: JSON.stringify({
+                _id: this.props.groupData._id, //because to add into that particular group
+                email: this.state.email,
+                projectTitle: this.state.projectTitle,
+                abstract: this.state.abstract,
+                teamMem1: this.state.teamMem1,
+                teamMem2: this.state.teamMem2,
+                teamMem3: this.state.teamMem3,
+                teamMem4: this.state.teamMem4,
+                projectLink: this.state.projectLink,
+                didAdd: true,
+                isApproved: false,
+                completed: false,
+              }),
+            }
+          ).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
         }
       });
   };
@@ -107,7 +109,7 @@ class AddDetails extends React.Component {
       alert("Please provide a valid Project Link");
       return;
     }
-    const p = await fetch(`${process.env.API_URL}/submitproject`, {
+    const p = await fetch(` https://finalize.herokuapp.com/submitproject`, {
       method: "POST",
 
       headers: {

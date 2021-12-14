@@ -9,7 +9,7 @@ class CreateGroup extends React.Component {
     link: "http://bit.ly/245cK",
   };
   createNewGroup = async () => {
-    const p = await fetch(`${process.env.API_URL}/creategroupapi`, {
+    const p = await fetch(`https://finalize.herokuapp.com/creategroupapi`, {
       method: "POST",
 
       headers: {
