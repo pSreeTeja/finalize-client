@@ -18,7 +18,7 @@ class EachGroupCard extends React.Component {
   //   }
   // };
   deleteGroup = async (_id) => {
-    const response = await fetch("https://finalize.herokuapp.com/deletegroup", {
+    const response = await fetch("/deletegroup", {
       method: "POST",
       credentials: "include",
       headers: {

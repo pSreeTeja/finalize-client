@@ -55,7 +55,7 @@ class LandingPage extends React.Component {
     );
   };
   registerUser = () => {
-    const response = fetch("https://finalize.herokuapp.com/register", {
+    const response = fetch("/register", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
