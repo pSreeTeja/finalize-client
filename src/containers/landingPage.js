@@ -41,8 +41,8 @@ class LandingPage extends React.Component {
         console.log("UNAUTHORIZED");
         this.setState({ stat: 401 });
       } else {
-        console.log(res);
-        // window.open("https://finalize.netlify.app/dashboard", "_top");
+        // console.log(res);
+        window.open("https://finalize.netlify.app/dashboard", "_top");
       }
     });
   };
