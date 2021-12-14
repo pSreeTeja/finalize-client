@@ -11,6 +11,7 @@ class CreateGroup extends React.Component {
   createNewGroup = async () => {
     const p = await fetch("/creategroupapi", {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

@@ -28,6 +28,7 @@ class LandingPage extends React.Component {
   loginUser = async () => {
     const response = await fetch("/login", {
       method: "POST",
+      mode: "cors",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
@@ -57,6 +58,7 @@ class LandingPage extends React.Component {
   registerUser = () => {
     const response = fetch("/register", {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },

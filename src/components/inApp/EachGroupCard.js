@@ -20,6 +20,7 @@ class EachGroupCard extends React.Component {
   deleteGroup = async (_id) => {
     const response = await fetch("/deletegroup", {
       method: "POST",
+      mode: "cors",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",

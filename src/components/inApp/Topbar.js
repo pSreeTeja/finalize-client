@@ -21,6 +21,7 @@ class Topbar extends React.Component {
   logoutUser = async () => {
     await fetch("/logout", {
       method: "GET",
+      mode: "cors",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -34,6 +35,7 @@ class Topbar extends React.Component {
     try {
       const res = await fetch("/data", {
         method: "GET",
+        mode: "cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

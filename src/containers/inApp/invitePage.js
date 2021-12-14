@@ -5,6 +5,7 @@ class InvitePage extends React.Component {
   addMeToGroup = async () => {
     const response = await fetch("/invite", {
       method: "POST",
+      mode: "cors",
       credentials: "include",
       headers: {
         "Content-Type": "application/json",

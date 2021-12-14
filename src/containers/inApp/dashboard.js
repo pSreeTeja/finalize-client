@@ -10,6 +10,7 @@ class Dashboard extends React.Component {
     try {
       const res = await fetch("/data", {
         method: "GET",
+        mode: "cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -33,6 +34,7 @@ class Dashboard extends React.Component {
     try {
       const res = await fetch("/displaygroups", {
         method: "GET",
+        mode: "cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

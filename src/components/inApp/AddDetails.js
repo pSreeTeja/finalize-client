@@ -21,6 +21,7 @@ class AddDetails extends React.Component {
     try {
       const res = await fetch("/data", {
         method: "GET",
+        mode: "cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
@@ -48,6 +49,7 @@ class AddDetails extends React.Component {
         if (this.props.myTeamDetails.didAdd) {
           const p = await fetch("/updatestudentproject", {
             method: "POST",
+            mode: "cors",
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
@@ -74,6 +76,7 @@ class AddDetails extends React.Component {
         } else {
           const p = await fetch("/addstudentproject", {
             method: "POST",
+            mode: "cors",
             headers: {
               "Content-Type": "application/json",
               Accept: "application/json",
@@ -106,6 +109,7 @@ class AddDetails extends React.Component {
     }
     const p = await fetch("/submitproject", {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",

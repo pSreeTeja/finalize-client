@@ -17,6 +17,7 @@ class GroupInfo extends React.Component {
     try {
       const res = await fetch("/data", {
         method: "GET",
+        mode: "cors",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",

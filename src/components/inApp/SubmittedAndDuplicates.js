@@ -8,6 +8,7 @@ class SubmittedAndDuplicates extends React.Component {
     // console.log(data);
     const p = await fetch("/updatestudentproject", {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
@@ -33,6 +34,7 @@ class SubmittedAndDuplicates extends React.Component {
   rejectProject = async (data) => {
     const p = await fetch("/rejectproject", {
       method: "POST",
+      mode: "cors",
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
