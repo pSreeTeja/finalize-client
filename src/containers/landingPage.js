@@ -26,9 +26,8 @@ class LandingPage extends React.Component {
     this.setState({ signInDisplay: false, registerDisplay: true });
   };
   loginUser = async () => {
-    const response = await fetch(` https://finalize.herokuapp.com/login`, {
+    const response = await fetch("https://finalize.herokuapp.com/login", {
       method: "POST",
-
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +41,8 @@ class LandingPage extends React.Component {
         console.log("UNAUTHORIZED");
         this.setState({ stat: 401 });
       } else {
-        window.open("https://finalize.netlify.app/dashboard", "_top");
+        console.log(res);
+        // window.open("https://finalize.netlify.app/dashboard", "_top");
       }
     });
   };
@@ -56,7 +56,7 @@ class LandingPage extends React.Component {
     );
   };
   registerUser = () => {
-    const response = fetch(` https://finalize.herokuapp.com/register`, {
+    const response = fetch("https://finalize.herokuapp.com/register", {
       method: "POST",
 
       headers: {

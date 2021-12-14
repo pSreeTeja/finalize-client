@@ -3,7 +3,7 @@ import "../../stylesheets/invite.css";
 import Logo from "../../media/Logo.svg";
 class InvitePage extends React.Component {
   addMeToGroup = async () => {
-    const response = await fetch(` https://finalize.herokuapp.com/invite`, {
+    const response = await fetch("https://finalize.herokuapp.com/invite", {
       method: "POST",
 
       credentials: "include",

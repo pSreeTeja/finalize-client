@@ -19,7 +19,7 @@ class AddDetails extends React.Component {
 
   getUserDetails = async () => {
     try {
-      const res = await fetch(` https://finalize.herokuapp.com/data`, {
+      const res = await fetch("https://finalize.herokuapp.com/data", {
         method: "GET",
 
         headers: {
@@ -48,7 +48,7 @@ class AddDetails extends React.Component {
         // console.log("EMAIL FETCHED IS" + this.state.email);
         if (this.props.myTeamDetails.didAdd) {
           const p = await fetch(
-            ` https://finalize.herokuapp.com/updatestudentproject`,
+            "https://finalize.herokuapp.com/updatestudentproject",
             {
               method: "POST",
 
@@ -76,7 +76,7 @@ class AddDetails extends React.Component {
           ).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
         } else {
           const p = await fetch(
-            ` https://finalize.herokuapp.com/addstudentproject`,
+            "https://finalize.herokuapp.com/addstudentproject",
             {
               method: "POST",
 
@@ -109,7 +109,7 @@ class AddDetails extends React.Component {
       alert("Please provide a valid Project Link");
       return;
     }
-    const p = await fetch(` https://finalize.herokuapp.com/submitproject`, {
+    const p = await fetch("https://finalize.herokuapp.com/submitproject", {
       method: "POST",
 
       headers: {

@@ -7,7 +7,7 @@ class SubmittedAndDuplicates extends React.Component {
     // console.log("DATA FROM ACCEPT CLICK");
     // console.log(data);
     const p = await fetch(
-      ` https://finalize.herokuapp.com/updatestudentproject`,
+      "https://finalize.herokuapp.com/updatestudentproject",
       {
         method: "POST",
 
@@ -35,7 +35,7 @@ class SubmittedAndDuplicates extends React.Component {
     ).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
   };
   rejectProject = async (data) => {
-    const p = await fetch(` https://finalize.herokuapp.com/rejectproject`, {
+    const p = await fetch("https://finalize.herokuapp.com/rejectproject", {
       method: "POST",
 
       headers: {
