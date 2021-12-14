@@ -32,7 +32,6 @@ class LandingPage extends React.Component {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": true,
       },
       body: JSON.stringify({
         email: this.state.email,
@@ -61,7 +60,6 @@ class LandingPage extends React.Component {
       method: "POST",
 
       headers: {
-        "Access-Control-Allow-Origin": true,
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
