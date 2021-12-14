@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
   userData = {};
   getData = async () => {
     try {
-      const res = await fetch("/data", {
+      const res = await fetch("https://finalize.herokuapp.com/data", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -31,7 +31,7 @@ class Dashboard extends React.Component {
   };
   getGroups = async () => {
     try {
-      const res = await fetch("/displaygroups", {
+      const res = await fetch("https://finalize.herokuapp.com/displaygroups", {
         method: "GET",
         headers: {
           Accept: "application/json",
