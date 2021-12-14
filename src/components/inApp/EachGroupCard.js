@@ -28,7 +28,7 @@ class EachGroupCard extends React.Component {
         _id: _id,
       }),
     }).then((res) => {
-      window.open("https://finalize.herokuapp.com/dashboard", "_top");
+      window.open("https://finalize.netlify.app/dashboard", "_top");
       // console.log("CLIENT: DELTED ");
     });
   };

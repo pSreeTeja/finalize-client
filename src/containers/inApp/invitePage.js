@@ -13,7 +13,7 @@ class InvitePage extends React.Component {
         groupId: this.props.match.params.groupid,
       }),
     }).then((res) =>
-      window.open("https://finalize.herokuapp.com/dashboard", "_top")
+      window.open("https://finalize.netlify.app/dashboard", "_top")
     );
   };
   render() {

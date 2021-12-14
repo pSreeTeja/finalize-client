@@ -27,7 +27,7 @@ class Topbar extends React.Component {
       },
       credentials: "include",
     })
-      .then((res) => window.open("https://finalize.herokuapp.com", "_top"))
+      .then((res) => window.open("https://finalize.netlify.app", "_top"))
       .catch((err) => {});
   };
   getUserDetails = async () => {

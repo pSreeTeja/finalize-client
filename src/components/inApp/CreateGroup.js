@@ -22,7 +22,7 @@ class CreateGroup extends React.Component {
         date: this.state.date,
         link: this.state.link,
       }),
-    }).then(window.open("https://finalize.herokuapp.com/dashboard", "_top"));
+    }).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
     const data = await p.json();
     // console.log(data);
   };

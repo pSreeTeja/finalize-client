@@ -41,7 +41,7 @@ class LandingPage extends React.Component {
         console.log("UNAUTHORIZED");
         this.setState({ stat: 401 });
       } else {
-        window.open("https://finalize.herokuapp.com/dashboard", "_top");
+        window.open("https://finalize.netlify.app/dashboard", "_top");
       }
     });
   };
@@ -66,7 +66,7 @@ class LandingPage extends React.Component {
         password: this.state.pass,
         isTeacher: this.state.isTeacher,
       }),
-    }).then(window.open("https://finalize.herokuapp.com", "_top"));
+    }).then(window.open("https://finalize.netlify.app", "_top"));
     // const data = response.json();
     // console.log(data);
   };

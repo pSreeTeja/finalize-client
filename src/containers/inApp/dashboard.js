@@ -55,7 +55,7 @@ class Dashboard extends React.Component {
           isTeacher: res.isTeacher,
         });
       })
-      .catch((err) => window.open("https://finalize.herokuapp.com", "_top"));
+      .catch((err) => window.open("https://finalize.netlify.app", "_top"));
     this.getGroups().then((res) => {
       this.setState({
         yourGroupsData: res,
