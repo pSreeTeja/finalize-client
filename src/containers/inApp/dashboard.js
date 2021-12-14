@@ -14,6 +14,7 @@ class Dashboard extends React.Component {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": true,
         },
         credentials: "include",
       });
@@ -37,6 +38,7 @@ class Dashboard extends React.Component {
 
         headers: {
           Accept: "application/json",
+          "Access-Control-Allow-Origin": true,
           "Content-Type": "application/json",
         },
         credentials: "include",

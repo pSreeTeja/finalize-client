@@ -9,6 +9,7 @@ class InvitePage extends React.Component {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": true,
       },
       body: JSON.stringify({
         groupId: this.props.match.params.groupid,

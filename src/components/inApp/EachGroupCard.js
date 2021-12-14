@@ -26,6 +26,7 @@ class EachGroupCard extends React.Component {
         credentials: "include",
         headers: {
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": true,
         },
         body: JSON.stringify({
           _id: _id,

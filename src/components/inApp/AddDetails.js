@@ -25,6 +25,7 @@ class AddDetails extends React.Component {
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": true,
         },
         credentials: "include",
       });
@@ -55,6 +56,7 @@ class AddDetails extends React.Component {
               headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
+                "Access-Control-Allow-Origin": true,
               },
               credentials: "include",
               body: JSON.stringify({
@@ -83,6 +85,7 @@ class AddDetails extends React.Component {
               headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",
+                "Access-Control-Allow-Origin": true,
               },
               credentials: "include",
               body: JSON.stringify({
@@ -115,6 +118,7 @@ class AddDetails extends React.Component {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "Access-Control-Allow-Origin": true,
       },
       credentials: "include",
       body: JSON.stringify({

@@ -14,6 +14,7 @@ class SubmittedAndDuplicates extends React.Component {
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          "Access-Control-Allow-Origin": true,
         },
         credentials: "include",
         body: JSON.stringify({
@@ -41,6 +42,7 @@ class SubmittedAndDuplicates extends React.Component {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        "Access-Control-Allow-Origin": true,
       },
       credentials: "include",
       body: JSON.stringify({
