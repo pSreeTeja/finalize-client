@@ -32,7 +32,8 @@ class SubmittedAndDuplicates extends React.Component {
           isEditDetails: false,
         }),
       }
-    ).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
+    ).then();
+    //window.open("https://finalize.netlify.app/dashboard", "_top")
   };
   rejectProject = async (data) => {
     const p = await fetch("https://finalize.herokuapp.com/rejectproject", {
@@ -58,7 +59,8 @@ class SubmittedAndDuplicates extends React.Component {
         completed: false,
         isEditDetails: false,
       }),
-    }).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
+    }).then();
+    //window.open("https://finalize.netlify.app/dashboard", "_top")
   };
   render() {
     // console.log(this.props.isTeacher);
