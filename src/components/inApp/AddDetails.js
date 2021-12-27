@@ -73,7 +73,7 @@ class AddDetails extends React.Component {
                 isEditDetails: true,
               }),
             }
-          ).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
+          ).then(console.log("Updated"));
         } else {
           const p = await fetch(
             "https://finalize.herokuapp.com/addstudentproject",
@@ -100,7 +100,7 @@ class AddDetails extends React.Component {
                 completed: false,
               }),
             }
-          ).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
+          ).then(console.log("Added"));
         }
       });
   };
