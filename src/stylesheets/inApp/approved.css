@@ -7,6 +7,7 @@
   margin-left: 16px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition-duration: 0.1s;
+  align-items: center;
 }
 .commentButton {
   border: none;
@@ -26,9 +27,11 @@
   border: none;
   background-color: transparent;
   font-size: 16px;
+  width: 120px;
 }
 .buttonDiv {
-  height: 30px;
+  height: fit-content;
+  width: fit-content;
 }
 .green {
   background-color: #52d452;
