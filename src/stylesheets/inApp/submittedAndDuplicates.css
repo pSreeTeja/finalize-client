@@ -21,10 +21,11 @@
   font-weight: bold;
 }
 .rollNumbersDiv {
-  font-size: 20px;
+  font-size: 18px;
   display: flex;
   justify-content: center;
   flex-direction: column;
+  width: fit-content;
 }
 
 .rightDiv {
