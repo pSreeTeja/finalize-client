@@ -62,19 +62,22 @@ class EachGroupCard extends React.Component {
         </div>
         {this.props.isTeacher && (
           <div className="cardSettingDiv">
-            <img
-              className="deleteicon"
-              src={DeleteIcon}
-              alt="img"
-              onClick={() => {
-                var r = window.confirm(
-                  `Are you sure you want delete ${this.props.groupData.projectTitle} ?`
-                );
-                if (r == true) {
-                  this.deleteGroup(this.props.groupData._id);
-                }
-              }}
-            />
+            <button>
+              <img
+                className="deleteicon"
+                src={DeleteIcon}
+                alt="img"
+                onClick={() => {
+                  var r = window.confirm(
+                    `Are you sure you want delete ${this.props.groupData.projectTitle} ?`
+                  );
+                  if (r == true) {
+                    this.deleteGroup(this.props.groupData._id);
+                  }
+                }}
+              />
+            </button>
+
             <img className="cardSettingsIcon" src={CardSettings} alt="img" />
           </div>
         )}
