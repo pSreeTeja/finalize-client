@@ -73,7 +73,11 @@ class AddDetails extends React.Component {
                 isEditDetails: true,
               }),
             }
-          ).then(console.log("Updated"));
+          ).then((res) => {
+            if (res.status == 200) {
+              window.open("https://finalize.netlify.app/dashboard");
+            }
+          });
         } else {
           const p = await fetch(
             "https://finalize.herokuapp.com/addstudentproject",
@@ -100,7 +104,11 @@ class AddDetails extends React.Component {
                 completed: false,
               }),
             }
-          ).then(console.log("Added"));
+          ).then((res) => {
+            if (res.status == 200) {
+              window.open("https://finalize.netlify.app/dashboard");
+            }
+          });
         }
       });
   };
@@ -131,7 +139,11 @@ class AddDetails extends React.Component {
         isApproved: true,
         completed: true,
       }),
-    }).then(window.open("https://finalize.netlify.app/dashboard", "_top"));
+    }).then((res) => {
+      if (res.status == 200) {
+        window.open("https://finalize.netlify.app/dashboard");
+      }
+    });
   };
   disableSubmitButton = () => {
     this.setState({ submitButtonEnabled: false });

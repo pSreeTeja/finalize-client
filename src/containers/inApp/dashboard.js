@@ -42,12 +42,9 @@ class Dashboard extends React.Component {
         credentials: "include",
       });
       const data = await res.json();
-      // console.log("GROUPS DATA");
-      // console.log(data);
+
       return data;
-    } catch (err) {
-      // console.log(err);
-    }
+    } catch (err) {}
   };
 
   componentDidMount() {
