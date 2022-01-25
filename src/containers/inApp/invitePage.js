@@ -13,9 +13,11 @@ class InvitePage extends React.Component {
       body: JSON.stringify({
         groupId: this.props.match.params.groupid,
       }),
-    }).then((res) =>
-      window.open("https://finalize.netlify.app/dashboard", "_top")
-    );
+    }).then((res) => {
+      if (res.status == 200) {
+        window.open("https://finalize.netlify.app/dashboard", "_top");
+      }
+    });
   };
   render() {
     return (
