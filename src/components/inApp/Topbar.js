@@ -28,7 +28,11 @@ class Topbar extends React.Component {
       },
       credentials: "include",
     })
-      .then((res) => window.open("https://finalize.netlify.app", "_top"))
+      .then((res) => {
+        if (res.status == 200) {
+          window.open("https://finalize.netlify.app", "_top");
+        }
+      })
       .catch((err) => {});
   };
   getUserDetails = async () => {

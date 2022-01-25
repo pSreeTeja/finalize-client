@@ -10,7 +10,6 @@ class SubmittedAndDuplicates extends React.Component {
       "https://finalize.herokuapp.com/updatestudentproject",
       {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
@@ -32,8 +31,11 @@ class SubmittedAndDuplicates extends React.Component {
           isEditDetails: false,
         }),
       }
-    ).then();
-    //window.open("https://finalize.netlify.app/dashboard", "_top")
+    ).then((res) => {
+      if (res.status == 200) {
+        window.open("https://finalize.netlify.app/dashboard", "_top");
+      }
+    });
   };
   rejectProject = async (data) => {
     const p = await fetch("https://finalize.herokuapp.com/rejectproject", {
@@ -59,12 +61,13 @@ class SubmittedAndDuplicates extends React.Component {
         completed: false,
         isEditDetails: false,
       }),
-    }).then();
-    //window.open("https://finalize.netlify.app/dashboard", "_top")
+    }).then((res) => {
+      if (res.status == 200) {
+        window.open("https://finalize.netlify.app/dashboard", "_top");
+      }
+    });
   };
   render() {
-    // console.log(this.props.isTeacher);
-
     return (
       <div className="submittedAndDuplicatesMainDiv">
         {this.props.Data.map((data) => {

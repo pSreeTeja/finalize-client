@@ -75,7 +75,7 @@ class AddDetails extends React.Component {
             }
           ).then((res) => {
             if (res.status == 200) {
-              window.open("https://finalize.netlify.app/dashboard");
+              window.open("https://finalize.netlify.app/dashboard", "_top");
             }
           });
         } else {
@@ -106,7 +106,7 @@ class AddDetails extends React.Component {
             }
           ).then((res) => {
             if (res.status == 200) {
-              window.open("https://finalize.netlify.app/dashboard");
+              window.open("https://finalize.netlify.app/dashboard", "_top");
             }
           });
         }
@@ -141,7 +141,7 @@ class AddDetails extends React.Component {
       }),
     }).then((res) => {
       if (res.status == 200) {
-        window.open("https://finalize.netlify.app/dashboard");
+        window.open("https://finalize.netlify.app/dashboard", "_top");
       }
     });
   };
