@@ -68,7 +68,11 @@ class LandingPage extends React.Component {
         password: this.state.pass,
         isTeacher: this.state.isTeacher,
       }),
-    }).then(window.open("https://finalize.netlify.app", "_top"));
+    }).then((res) => {
+      if (res.status == 201) {
+        window.open("https://finalize.netlify.app", "_top");
+      }
+    });
     // const data = response.json();
     // console.log(data);
   };

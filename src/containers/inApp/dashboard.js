@@ -10,7 +10,6 @@ class Dashboard extends React.Component {
     try {
       const res = await fetch("https://finalize.herokuapp.com/data", {
         method: "GET",
-
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
