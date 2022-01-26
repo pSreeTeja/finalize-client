@@ -8,7 +8,9 @@ class My404Page extends Component {
       <div className="mainDiv404">
         <img className="img" src={Img} alt="img" />
         <span className="pageNotFoundText">Page Not Found</span>
-        <a href="https://finalize.netlify.app/">Back to Home</a>
+        <a className="backToHomeLink" href="https://finalize.netlify.app/">
+          Back to Home
+        </a>
       </div>
     );
   }
