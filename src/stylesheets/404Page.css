@@ -1,0 +1,13 @@
+.mainDiv404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.img {
+  height: 80px;
+}
+.pageNotFoundText {
+  font-size: 32px;
+  font-weight: bold;
+}

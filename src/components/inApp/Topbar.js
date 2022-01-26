@@ -1,10 +1,6 @@
 import React, { Component } from "react";
-import NotifyBell from "../../media/Bell.svg";
 import User from "../../media/User.svg";
-import Arrow from "../../media/Arrow.svg";
-import MagnifyingGlass from "../../media/Magnifying Glass.svg";
 import "../../stylesheets/inApp/topbar.css";
-import NotificationPanel from "./NotificationPanel";
 class Topbar extends React.Component {
   state = {
     name: "",
