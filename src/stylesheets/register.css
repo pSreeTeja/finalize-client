@@ -70,3 +70,62 @@
 .registerWithSocials {
   margin-top: 6%;
 }
+@media screen and (max-width: 1440px) {
+  .nameInput,
+  .emailInput,
+  .passwordInput,
+  .confirmPasswordInput {
+    width: 84%;
+  }
+  .selectFormRegister {
+    margin-left: 16%;
+  }
+  .registerInButtonComponent {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .nameInput,
+  .emailInput,
+  .passwordInput,
+  .confirmPasswordInput {
+    width: 80%;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .selectFormRegister {
+    margin-left: 20%;
+    font-size: 14px;
+  }
+  .googleLogoRegister,
+  .facebookLogoRegister {
+    height: 24px;
+  }
+  .registerInButtonComponent {
+    width: 40%;
+    font-size: 15px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .nameInput,
+  .emailInput,
+  .passwordInput,
+  .confirmPasswordInput {
+    width: 80%;
+    margin: 5px;
+    font-size: 12px;
+  }
+  .selectFormRegister {
+    margin-left: 20%;
+    font-size: 12px;
+  }
+  .googleLogoRegister,
+  .facebookLogoRegister {
+    height: 22px;
+  }
+  .registerInButtonComponent {
+    width: 35%;
+    font-size: 14px;
+  }
+}

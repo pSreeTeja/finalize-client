@@ -141,3 +141,85 @@
 .contactMediaLogo {
   height: 24px;
 }
+/* responsive */
+@media screen and (max-width: 1680px) {
+  .headerButtonsDiv {
+    margin-right: 5%;
+  }
+  .landingPageText {
+    font-size: 36px;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .landingPageText {
+    font-size: 36px;
+  }
+  .landingPageImage {
+    height: 400px;
+  }
+  .signInButton,
+  .registerButton {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .signInButton,
+  .registerButton {
+    font-size: 14px;
+  }
+  .landingPageText {
+    font-size: 28px;
+  }
+  .landingPageImage {
+    height: 320px;
+  }
+  .headerButtonsDiv {
+    margin-right: 7%;
+  }
+  .landingPageBodyDiv {
+    padding: 3% 4%;
+  }
+  .appNameFooter,
+  .contactHeadingFooter {
+    font-size: 14px;
+  }
+  .taglineFooter,
+  .appEmail {
+    font-size: 10px;
+  }
+  .logoFooter {
+    height: 32px;
+  }
+  .footer {
+    padding: 5px 5px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .logo {
+    height: 32px;
+  }
+  .appName {
+    font-size: 18px;
+  }
+  .signInButton,
+  .registerButton {
+    font-size: 12px;
+  }
+  .landingPageText {
+    font-size: 24px;
+  }
+  .landingPageBodyDiv {
+    padding: 3.2% 3%;
+  }
+  .appNameFooter,
+  .contactHeadingFooter {
+    font-size: 12px;
+  }
+  .taglineFooter,
+  .appEmail {
+    font-size: 8px;
+  }
+  .landingPageImage {
+    height: 320px;
+  }
+}

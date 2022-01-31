@@ -71,3 +71,65 @@
 .facebookLogoSignIn:hover {
   background-color: #d1d1d1;
 }
+@media screen and (max-width: 1680px) {
+  .orContinueWithText {
+    margin: 5px;
+    font-size: 14px;
+  }
+  .sideLine {
+    width: 20%;
+  }
+}
+@media screen and (max-width: 1440px) {
+  .emailInput,
+  .passwordInput {
+    width: 84%;
+  }
+  .signInButtonInComponent {
+    width: 50%;
+  }
+  .sideLine {
+    width: 20%;
+  }
+  .forgotPasswordLink {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1366px) {
+  .emailInput,
+  .passwordInput {
+    width: 80%;
+    margin: 5px;
+    font-size: 14px;
+  }
+  .signInButtonInComponent {
+    width: 40%;
+    font-size: 15px;
+  }
+  .googleLogoSignIn,
+  .facebookLogoSignIn {
+    height: 24px;
+  }
+}
+@media screen and (max-width: 1080px) {
+  .emailInput,
+  .passwordInput {
+    width: 80%;
+    margin: 5px;
+    font-size: 12px;
+  }
+  .signInButtonInComponent {
+    width: 35%;
+    font-size: 14px;
+  }
+  .forgotPasswordLink {
+    font-size: 12px;
+  }
+  .orContinueWithText {
+    font-size: 12px;
+  }
+  .googleLogoSignIn,
+  .facebookLogoSignIn {
+    height: 22px;
+  }
+}
