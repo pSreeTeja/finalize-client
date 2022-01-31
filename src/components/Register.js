@@ -95,9 +95,9 @@ class Register extends React.Component {
         </button>
         <span className="errorMsg">{this.state.errMsg}</span>
         <div className="registerOrContinueWithDiv">
-          <img src={Line} alt="img" />
+          <img className="sideLine" src={Line} alt="img" />
           <span className="orContinueWithText">or continue with</span>
-          <img src={Line} alt="img" />
+          <img className="sideLine" src={Line} alt="img" />
         </div>
         <div className="registerWithSocials">
           <img className="googleLogoRegister" src={GoogleLogo} alt="img" />
