@@ -162,12 +162,12 @@ class LandingPage extends React.Component {
           </div>
           <div className="contactFooterDiv">
             <span className="contactHeadingFooter">Contact :</span>
-            <span>support.finalize@gmail.com</span>
-            <div className="contactMediaLogosDiv">
+            <span className="appEmail">support.finalize@gmail.com</span>
+            {/* <div className="contactMediaLogosDiv">
               <img className="contactMediaLogo" src={FacebookLogo} alt="img" />
               <img className="contactMediaLogo" src={TwitterLogo} alt="img" />
               <img className="contactMediaLogo" src={WhatsappLogo} alt="img" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
