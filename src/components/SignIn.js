@@ -54,9 +54,9 @@ class SignIn extends React.Component {
         )}
 
         <div className="signInContinueWithDiv">
-          <img src={Line} alt="img" />
+          <img className="sideLine" src={Line} alt="img" />
           <span className="orContinueWithText">or continue with</span>
-          <img src={Line} alt="img" />
+          <img className="sideLine" src={Line} alt="img" />
         </div>
         <div className="signInWithMediaDiv">
           <img className="googleLogoSignIn" src={GoogleLogo} alt="img" />
