@@ -163,6 +163,12 @@
   }
 }
 @media screen and (max-width: 1366px) {
+  .logo {
+    height: 32px;
+  }
+  .appName {
+    font-size: 18px;
+  }
   .signInButton,
   .registerButton {
     font-size: 14px;
