@@ -88,6 +88,22 @@ class LandingPage extends React.Component {
       () => this.registerUser()
     );
   };
+  componentDidMount = async () => {
+    const response = await fetch(
+      "https://finalize.herokuapp.com/isAuthenticated",
+      {
+        method: "GET",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      }
+    ).then((res) => {
+      if (res.status == 200) {
+        window.open("https://finalize.netlify.app/dashboard", "_top");
+      }
+    });
+  };
 
   render() {
     // console.log(this.state);
