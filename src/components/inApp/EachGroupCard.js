@@ -29,7 +29,7 @@ class EachGroupCard extends React.Component {
         _id: _id,
       }),
     }).then((res) => {
-      if (res == 200) {
+      if (res.status == 200) {
         window.open("https://finalize.netlify.app/dashboard", "_top");
       }
       // console.log("CLIENT: DELTED ");
