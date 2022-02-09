@@ -101,7 +101,6 @@ class Register extends React.Component {
         </div>
         <div className="registerWithSocials">
           <img className="googleLogoRegister" src={GoogleLogo} alt="img" />
-          <img className="facebookLogoRegister" src={FacebookLogo} alt="img" />
         </div>
       </div>
     );

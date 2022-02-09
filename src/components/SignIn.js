@@ -60,7 +60,6 @@ class SignIn extends React.Component {
         </div>
         <div className="signInWithMediaDiv">
           <img className="googleLogoSignIn" src={GoogleLogo} alt="img" />
-          <img className="facebookLogoSignIn" src={FacebookLogo} alt="img" />
         </div>
       </div>
     );
