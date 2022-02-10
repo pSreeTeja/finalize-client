@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Logo from "../../media/Logo.svg";
+import { Link } from "react-router-dom";
 import Activity from "../../media/Activity.svg";
 import Groups from "../../media/Groups.svg";
 import Announcements from "../../media/Announcements.svg";
