@@ -25,6 +25,7 @@ function App() {
             component={InvitePage}
             history={history}
           />
+          <Route exact path="/help" component={HelpPage} />
           <Route exact path="*" component={My404Page} />
         </Switch>
       </BrowserRouter>
