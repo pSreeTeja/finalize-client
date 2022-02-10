@@ -75,8 +75,6 @@ class EachGroupCard extends React.Component {
                 }
               }}
             />
-
-            <img className="cardSettingsIcon" src={CardSettings} alt="img" />
           </div>
         )}
       </div>
