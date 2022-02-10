@@ -74,6 +74,11 @@
 .settingsSection {
   margin-bottom: 10%;
 }
+.helpLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
 
 @media screen and (max-width: 1366px) {
   .sidebarMainDiv {

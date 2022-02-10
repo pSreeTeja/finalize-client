@@ -51,8 +51,10 @@ class Sidebar extends React.Component {
           )}
 
           <div className="bottomDivSidebarSection">
-            <img className="sectionLogo" src={Help} alt="img" />
-            <span className="sectionName">Help</span>
+            <Link to="/help" className="helpLink">
+              <img className="sectionLogo" src={Help} alt="img" />
+              <span className="sectionName helpText">Help</span>
+            </Link>
           </div>
           {/* <div className="bottomDivSidebarSection settingsSection">
             <img className="sectionLogo" src={Settings} alt="img" />
