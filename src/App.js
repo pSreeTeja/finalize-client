@@ -6,6 +6,7 @@ import LandingPage from "./containers/landingPage";
 import My404Page from "./containers/404page";
 import Dashboard from "./containers/inApp/dashboard";
 import InvitePage from "./containers/inApp/invitePage";
+import HelpPage from "./containers/help";
 
 function App() {
   const history = useHistory();
