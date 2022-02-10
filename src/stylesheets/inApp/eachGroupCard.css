@@ -57,3 +57,21 @@
 .peopleIconNumber {
   height: 25px;
 }
+@media screen and (max-width: 1366px) {
+  .groupDiv {
+    height: 120px;
+    width: 20%;
+  }
+  .projectName {
+    font-size: 18px;
+    margin-top: 8px;
+  }
+  .aboutTheProject {
+    font-size: 14px;
+  }
+  .peopleIconFirst,
+  .peopleIconSecond,
+  .peopleIconNumber {
+    height: 20px;
+  }
+}

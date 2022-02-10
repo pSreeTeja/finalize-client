@@ -47,3 +47,14 @@
   background-color: #2664ec;
   color: white;
 }
+@media screen and (max-width: 1366px) {
+  .submitted,
+  .duplicates,
+  .approved,
+  .about,
+  .addDetailsButton {
+    font-size: 16px;
+    padding: 6px 10px;
+    margin: 16px;
+  }
+}

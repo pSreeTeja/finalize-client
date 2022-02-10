@@ -41,3 +41,12 @@
   background-color: #4561f1;
   color: white;
 }
+@media screen and (max-width: 1366px) {
+  .commentButton,
+  .button {
+    font-size: 14px;
+  }
+  .statusLogo {
+    width: 20px;
+  }
+}

@@ -47,3 +47,20 @@
   border: none;
   margin: 22px;
 }
+@media screen and (max-width: 1366px) {
+  .projectTitleDv,
+  .abstractProjectDiv,
+  .teamMembersDiv,
+  .linkProjectDiv {
+    font-size: 16px;
+  }
+  .name {
+    font-size: 16px;
+  }
+  .abstractText,
+  .teamMembers,
+  .commentsText,
+  .link {
+    margin-right: 50px;
+  }
+}

@@ -83,3 +83,45 @@
 .submitButton {
   margin-left: 2%;
 }
+@media screen and (max-width: 1366px) {
+  .aboutProjectField {
+    font-size: 14px;
+    height: 28px;
+  }
+  .addProjectNameText,
+  .addAbstractText,
+  .addTeamMembers,
+  .addLink {
+    font-size: 16px;
+  }
+  .addprojectTitleDv,
+  .addLinkProjectDiv,
+  .addAbstractProjectDiv,
+  .addTeamMembersDiv {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+  }
+  .abstractField {
+    font-size: 14px;
+    height: 100px;
+    margin-left: 80px;
+  }
+  .membersField1,
+  .membersField2,
+  .membersField3,
+  .membersField4 {
+    font-size: 14px;
+    margin-left: 50px;
+  }
+  .addLinkField {
+    font-size: 14px;
+    margin-left: 126px;
+  }
+  .saveButton,
+  .submitButton {
+    margin-top: 32px;
+    font-size: 14px;
+    padding: 8px 4px;
+  }
+}

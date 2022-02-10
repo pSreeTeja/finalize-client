@@ -74,3 +74,23 @@
 .settingsSection {
   margin-bottom: 10%;
 }
+
+@media screen and (max-width: 1366px) {
+  .sidebarMainDiv {
+    font-size: 14px;
+    width: 13%;
+  }
+  .inAppLogo {
+    height: 32px;
+    margin-right: 5px;
+  }
+  .workspaceText {
+    font-size: 12px !important;
+  }
+  .sectionLogo {
+    height: 24px;
+  }
+  .createNewButton {
+    font-size: 14px;
+  }
+}

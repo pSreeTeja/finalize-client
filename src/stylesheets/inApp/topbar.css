@@ -94,3 +94,29 @@
   background-color: #2664ec;
   color: white;
 }
+@media screen and (max-width: 1366px) {
+  .topDiv {
+    height: 72px;
+  }
+  .searchBar {
+    width: 320px;
+    height: 18px;
+    font-size: 12px;
+  }
+  .joinButton {
+    width: 80px;
+    font-size: 14px;
+  }
+  .profilePhoto {
+    width: 36px;
+  }
+  .nameText {
+    font-size: 14px;
+  }
+  .logoutIcon {
+    height: 24px !important;
+  }
+  .logoutButton {
+    padding: 7px 12px;
+  }
+}

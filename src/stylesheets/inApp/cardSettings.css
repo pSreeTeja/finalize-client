@@ -15,3 +15,9 @@
 .cardSettingsIcon {
   height: 24px;
 }
+@media screen and (max-width: 1366px) {
+  .deleteicon {
+    height: 18px;
+    margin: 0px 8px;
+  }
+}

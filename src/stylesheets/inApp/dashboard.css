@@ -18,3 +18,12 @@
   padding: 0;
   height: calc(100vh - 130px);
 }
+
+@media screen and (max-width: 1366px) {
+  .topbarDiv {
+    height: 100px;
+  }
+  .bodyDiv {
+    height: calc(100vh - 100px);
+  }
+}

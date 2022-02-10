@@ -31,3 +31,13 @@
 .projectDeadline {
   margin-right: 2%;
 }
+
+@media screen and (max-width: 1366px) {
+  .headingForDiv {
+    height: 32px;
+    padding-bottom: 20px;
+  }
+  .createGroupHeading {
+    font-size: 30px;
+  }
+}
