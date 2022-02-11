@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../stylesheets/landingPage.css";
+import CookieConsent from "react-cookie-consent";
 import Logo from "../media/Logo.svg";
 import LandingPageImage from "../media/LandingPageImage.svg";
 import FacebookLogo from "../media/FacebookLogo.svg";
@@ -186,6 +187,25 @@ class LandingPage extends React.Component {
             </div> */}
           </div>
         </div>
+        <CookieConsent
+          debug={true}
+          style={{ textAlign: "center", transitionTime: "0.5" }}
+          buttonText="I Agree"
+          buttonStyle={{
+            fontSize: "16px",
+            backgroundColor: "#4561f1",
+            color: "white",
+          }}
+        >
+          Our site uses cookies to provide the best user experience.
+          <a
+            href="https://www.websitepolicies.com/policies/view/bwrZtBy7"
+            target="_blank"
+            style={{ color: "white" }}
+          >
+            Our Cookie Policy
+          </a>
+        </CookieConsent>
       </div>
     );
   }
