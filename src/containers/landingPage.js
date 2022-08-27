@@ -3,9 +3,7 @@ import "../stylesheets/landingPage.css";
 import CookieConsent from "react-cookie-consent";
 import Logo from "../media/Logo.svg";
 import LandingPageImage from "../media/LandingPageImage.svg";
-import FacebookLogo from "../media/FacebookLogo.svg";
-import TwitterLogo from "../media/TwitterLogo.svg";
-import WhatsappLogo from "../media/WhatsappLogo.svg";
+import Loading from "../components/inApp/Loading";
 import Register from "../components/Register";
 import SignIn from "../components/SignIn";
 
