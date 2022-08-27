@@ -27,9 +27,9 @@ class SignIn extends React.Component {
             this.setState({ pass: e.target.value });
           }}
         ></input>
-        <div className="forgotPasswordDiv">
+        {/* <div className="forgotPasswordDiv">
           <Link className="forgotPasswordLink">Forgot password?</Link>
-        </div>
+        </div> */}
         {/* <Link
           className="signInLink"
           to="/dashboard"
