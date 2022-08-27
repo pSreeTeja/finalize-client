@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import Sidebar from "../../components/inApp/Sidebar";
 import Topbar from "../../components/inApp/Topbar";
 import Body from "../../components/inApp/Body";
+import Loading from "../../components/inApp/Loading";
 import "../../stylesheets/inApp/dashboard.css";
 class Dashboard extends React.Component {
   userData = {};
@@ -46,24 +47,29 @@ class Dashboard extends React.Component {
       return data;
     } catch (err) {}
   };
+  setLoading = (bool) => {
+    this.setState({ loadingDisplay: bool });
+  };
 
   componentDidMount() {
+    this.setLoading(true);
     this.getData()
       .then((res) => {
         this.setState({
           isTeacher: res.isTeacher,
         });
       })
-      .catch((err) => window.open("https://finalize.netlify.app", "_top"));
+      .catch((err) => window.open("http://localhost:3000/", "_top"));
     this.getGroups().then((res) => {
       this.setState({
         yourGroupsData: res,
       });
-      // console.log("PRINTING YOUR GROUPS DATA");
-      // console.log(this.state.yourGroupsData);
+      this.setLoading(false);
     });
   }
   state = {
+    //loading
+    loadingDisplay: false,
     //from db
     isTeacher: true,
     groupsActive: true,
@@ -186,8 +192,6 @@ class Dashboard extends React.Component {
       viewSubmissionDisplay: false,
       groupInfoDisplay: false,
       addDetailsDisplay: false,
-      //groupInfo display and data
-      // groupData: {},
       teamData: {},
     });
   };
@@ -240,7 +244,6 @@ class Dashboard extends React.Component {
     });
   };
   handleApproved = () => {
-    // console.log("approvedCalled");
     this.setState({
       submittedDisplay: false,
       duplicatesDisplay: false,
@@ -262,7 +265,6 @@ class Dashboard extends React.Component {
   };
   openGroupInfo = (groupData) => {
     this.handleGroupInfo(groupData.projectTitle, groupData.projectDeadline);
-    // console.log(groupData);
     this.setState({
       submittedDisplay: true,
       duplicatesDisplay: false,
@@ -289,9 +291,6 @@ class Dashboard extends React.Component {
       teamData: data,
     });
   };
-  handleComments = () => {
-    // console.log("hello");
-  };
   handleAddDetails = () => {
     this.setState({
       submittedDisplay: false,
@@ -304,8 +303,6 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    // console.log("sending from dashboard");
-    // console.log(this.state);
     return (
       <div className="dashboardMainDiv">
         <Sidebar
@@ -348,6 +345,7 @@ class Dashboard extends React.Component {
             />
           </div>
         </div>
+        {this.state.loadingDisplay === true && <Loading />}
       </div>
     );
   }

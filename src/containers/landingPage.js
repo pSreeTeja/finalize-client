@@ -11,6 +11,7 @@ import SignIn from "../components/SignIn";
 
 class LandingPage extends React.Component {
   state = {
+    loadingDisplay: false,
     signInDisplay: true,
     registerDisplay: false,
     name: "",
@@ -39,10 +40,9 @@ class LandingPage extends React.Component {
       }),
     }).then((res) => {
       if (res.status == 401) {
-        console.log("UNAUTHORIZED");
+        // console.log("UNAUTHORIZED");
         this.setState({ stat: 401 });
       } else {
-        // console.log(res);
         window.open("https://finalize.netlify.app/dashboard", "_top");
       }
     });
@@ -56,7 +56,11 @@ class LandingPage extends React.Component {
       () => this.loginUser()
     );
   };
+  setLoading = (bool) => {
+    this.setState({ loadingDisplay: bool });
+  };
   registerUser = () => {
+    this.setLoading(true);
     const response = fetch("https://finalize.herokuapp.com/register", {
       method: "POST",
 
@@ -72,13 +76,11 @@ class LandingPage extends React.Component {
     }).then((res) => {
       if (res.status == 201) {
         window.open("https://finalize.netlify.app", "_top");
+        this.setLoading(false);
       }
     });
-    // const data = response.json();
-    // console.log(data);
   };
   setRegisterInfo = (name, email, pass, isTeacher) => {
-    // console.log(email + pass + isTeacher);
     this.setState(
       {
         name: name,
@@ -107,7 +109,6 @@ class LandingPage extends React.Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <div className="mainDiv">
         <div className="header">
@@ -180,11 +181,6 @@ class LandingPage extends React.Component {
           <div className="contactFooterDiv">
             <span className="contactHeadingFooter">Contact :</span>
             <span className="appEmail">support.finalize@gmail.com</span>
-            {/* <div className="contactMediaLogosDiv">
-              <img className="contactMediaLogo" src={FacebookLogo} alt="img" />
-              <img className="contactMediaLogo" src={TwitterLogo} alt="img" />
-              <img className="contactMediaLogo" src={WhatsappLogo} alt="img" />
-            </div> */}
           </div>
         </div>
         <CookieConsent
@@ -206,6 +202,7 @@ class LandingPage extends React.Component {
             Our Cookie Policy
           </a>
         </CookieConsent>
+        {this.state.loadingDisplay && <Loading />}
       </div>
     );
   }
