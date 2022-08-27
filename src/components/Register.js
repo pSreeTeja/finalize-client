@@ -94,7 +94,7 @@ class Register extends React.Component {
           Register
         </button>
         <span className="errorMsg">{this.state.errMsg}</span>
-        <span className="errorMsg">{this.props.regError}</span>
+        {/* <span className="errorMsg">{this.props.regError}</span> */}
         <div className="registerOrContinueWithDiv">
           <img className="sideLine" src={Line} alt="img" />
           <span className="orContinueWithText">or continue with</span>
