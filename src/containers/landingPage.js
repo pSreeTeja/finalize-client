@@ -76,11 +76,11 @@ class LandingPage extends React.Component {
         window.open("https://finalize.netlify.app", "_top");
       }
       if (res.status == 422) {
-        this.setState = {
+        this.setState({
           regError: res.json().then((data) => {
             return data.error;
           }),
-        };
+        });
         this.setLoading(false);
       }
     });
