@@ -18,6 +18,7 @@ class LandingPage extends React.Component {
     re_pass: "",
     isTeacher: false,
     stat: 200,
+    regError: "",
   };
   handleSignin = () => {
     this.setState({ signInDisplay: true, registerDisplay: false });
@@ -38,7 +39,6 @@ class LandingPage extends React.Component {
       }),
     }).then((res) => {
       if (res.status == 401) {
-        // console.log("UNAUTHORIZED");
         this.setState({ stat: 401 });
       } else {
         window.open("https://finalize.netlify.app/dashboard", "_top");
@@ -74,6 +74,13 @@ class LandingPage extends React.Component {
     }).then((res) => {
       if (res.status == 201) {
         window.open("https://finalize.netlify.app", "_top");
+      }
+      if (res.status == 422) {
+        this.setState = {
+          regError: res.json().then((data) => {
+            return data.error;
+          }),
+        };
         this.setLoading(false);
       }
     });
@@ -159,7 +166,10 @@ class LandingPage extends React.Component {
           </div>
           <div className="signInRegisterContainerDiv">
             {this.state.registerDisplay && (
-              <Register setRegisterInfo={this.setRegisterInfo} />
+              <Register
+                setRegisterInfo={this.setRegisterInfo}
+                regError={this.state.regError}
+              />
             )}
             {this.state.signInDisplay && (
               <SignIn setLoginInfo={this.setLoginInfo} stat={this.state.stat} />
