@@ -83,14 +83,6 @@ class LandingPage extends React.Component {
         });
         this.setLoading(false);
       }
-      if (res.status == 403) {
-        this.setState({
-          regError: res.json().then((data) => {
-            return data.error;
-          }),
-        });
-        this.setLoading(false);
-      }
     });
   };
   setRegisterInfo = (name, email, pass, isTeacher) => {
