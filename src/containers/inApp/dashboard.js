@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Redirect } from "react-router-dom";
 import Sidebar from "../../components/inApp/Sidebar";
 import Topbar from "../../components/inApp/Topbar";
 import Body from "../../components/inApp/Body";
@@ -9,7 +8,7 @@ class Dashboard extends React.Component {
   userData = {};
   getData = async () => {
     try {
-      const res = await fetch("https://finalize.herokuapp.com/data", {
+      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app/data", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -32,16 +31,19 @@ class Dashboard extends React.Component {
   };
   getGroups = async () => {
     try {
-      const res = await fetch("https://finalize.herokuapp.com/displaygroups", {
-        method: "GET",
+      const res = await fetch(
+        " https://cloudy-handbag-colt.cyclic.app/displaygroups",
+        {
+          method: "GET",
 
-        headers: {
-          Accept: "application/json",
+          headers: {
+            Accept: "application/json",
 
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        }
+      );
       const data = await res.json();
 
       return data;
@@ -86,99 +88,7 @@ class Dashboard extends React.Component {
     //groupInfo display and data
     // groupData: {},
     teamData: {},
-    yourGroupsData: [
-      // {
-      //   projectName: "Project Management",
-      //   aboutTheProject: "About the project",
-      //   people: ["A", "B", "C"],
-      //   projectDeadline: "25-11-2021 11:59 PM",
-      //   groupLink: "https://bit.ly/3MCKij",
-      //   submittedData: [
-      //     {
-      //       projectName: ".ffasfsfsf",
-      //       names: ["1602-19-733-106", "1602-19-733-091"],
-      //       abstract: "askfhasfgasgfasfhashfiasfgasufgiasf",
-      //       comments: ["kfdsjfsdgjdskjklgjlkgsdjkgjsdkgjkdsjkdsjkgj"],
-      //       isApproved: false,
-      //       completed: false,
-      //       link: "https://www.google.com",
-      //     },
-      //     {
-      //       projectName: "helloasfhasjfshjfdsfdsgdsgdh",
-      //       names: [
-      //         "1602-19-733-106",
-      //         "1602-19-733-091",
-      //         "1602-19-733-106",
-      //         "1602-19-733-091",
-      //         "1602-19-733-106",
-      //       ],
-      //       abstract: "askfhasfgasgfasfhashfiasfgasufgiasf",
-      //       comments: ["kfdsjfsdgjdskjklgjlkgsdjkgjsdkgjkdsjkdsjkgj"],
-      //       completed: true,
-      //       isApproved: true,
-      //       link: "https://www.google.com",
-      //     },
-      //     {
-      //       projectName: "nowayhome",
-      //       names: ["106", "526"],
-      //       abstract: "askfhasfgasgfasfhashfiasfgasufgiasf",
-      //       comments: ["kfdsjfsdgjdskjklgjlkgsdjkgjsdkgjkdsjkdsjkgj"],
-      //       completed: true,
-      //       isApproved: true,
-      //       link: "https://www.google.com",
-      //     },
-      //     {
-      //       projectName: "tobey",
-      //       names: ["106", "526"],
-      //       abstract: "askfhasfgasgfasfhashfiasfgasufgiasf",
-      //       comments: ["kfdsjfsdgjdskjklgjlkgsdjkgjsdkgjkdsjkdsjkgj"],
-      //       completed: true,
-      //       isApproved: true,
-      //       link: "https://www.google.com",
-      //     },
-      //   ],
-      //   duplicatesData: [
-      //     {
-      //       projectName: "a",
-      //       names: ["106", "91"],
-      //       abstract: "askfhasfgasgfasfhashfiasfgasufgiasf",
-      //       comments: ["kfdsjfsdgjdskjklgjlkgsdjkgjsdkgjkdsjkdsjkgj"],
-      //       isApproved: false,
-      //       completed: false,
-      //       link: "https://www.google.com",
-      //     },
-      //     {
-      //       projectName: "b",
-      //       names: ["106", "526"],
-      //       abstract: "askfhasfgasgfasfhashfiasfgasufgiasf",
-      //       comments: ["kfdsjfsdgjdskjklgjlkgsdjkgjsdkgjkdsjkdsjkgj"],
-      //       completed: true,
-      //       isApproved: false,
-      //       link: "https://www.google.com",
-      //     },
-      //   ],
-      // },
-      // {
-      //   projectName: "asfasfasjas",
-      //   aboutTheProject: "About the project",
-      //   people: ["A", "B", "C"],
-      // },
-      // {
-      //   projectName: "bbbbbb",
-      //   aboutTheProject: "About the project",
-      //   people: ["A", "B", "C"],
-      // },
-      // {
-      //   projectName: "Proafas",
-      //   aboutTheProject: "About the project",
-      //   people: ["A", "B", "C"],
-      // },
-      // {
-      //   projectName: "noway",
-      //   aboutTheProject: "About the project",
-      //   people: ["A", "B", "C"],
-      // },
-    ],
+    yourGroupsData: [],
   };
   handleCreateGroup = () => {
     this.setState({

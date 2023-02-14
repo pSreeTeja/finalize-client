@@ -27,17 +27,20 @@ class LandingPage extends React.Component {
     this.setState({ signInDisplay: false, registerDisplay: true });
   };
   loginUser = async () => {
-    const response = await fetch("https://finalize.herokuapp.com/login", {
-      method: "POST",
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        email: this.state.email,
-        password: this.state.pass,
-      }),
-    }).then((res) => {
+    const response = await fetch(
+      " https://cloudy-handbag-colt.cyclic.app/login",
+      {
+        method: "POST",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: this.state.email,
+          password: this.state.pass,
+        }),
+      }
+    ).then((res) => {
       if (res.status == 401) {
         this.setState({ stat: 401 });
       } else {
@@ -59,7 +62,7 @@ class LandingPage extends React.Component {
   };
   registerUser = () => {
     this.setLoading(true);
-    const response = fetch("https://finalize.herokuapp.com/register", {
+    const response = fetch(" https://cloudy-handbag-colt.cyclic.app/register", {
       method: "POST",
 
       headers: {
@@ -98,7 +101,7 @@ class LandingPage extends React.Component {
   };
   componentDidMount = async () => {
     const response = await fetch(
-      "https://finalize.herokuapp.com/isAuthenticated",
+      " https://cloudy-handbag-colt.cyclic.app/isAuthenticated",
       {
         method: "GET",
         headers: {

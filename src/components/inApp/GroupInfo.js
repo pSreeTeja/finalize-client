@@ -15,7 +15,7 @@ class GroupInfo extends React.Component {
   };
   getUserDetails = async () => {
     try {
-      const res = await fetch("https://finalize.herokuapp.com/data", {
+      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app/data", {
         method: "GET",
 
         headers: {

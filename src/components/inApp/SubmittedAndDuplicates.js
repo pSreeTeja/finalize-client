@@ -7,7 +7,7 @@ class SubmittedAndDuplicates extends React.Component {
     // console.log("DATA FROM ACCEPT CLICK");
     // console.log(data);
     const p = await fetch(
-      "https://finalize.herokuapp.com/updatestudentproject",
+      " https://cloudy-handbag-colt.cyclic.app/updatestudentproject",
       {
         method: "POST",
         headers: {
@@ -38,30 +38,33 @@ class SubmittedAndDuplicates extends React.Component {
     });
   };
   rejectProject = async (data) => {
-    const p = await fetch("https://finalize.herokuapp.com/rejectproject", {
-      method: "POST",
+    const p = await fetch(
+      " https://cloudy-handbag-colt.cyclic.app/rejectproject",
+      {
+        method: "POST",
 
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        _id: this.props.groupData._id, //because to add into that particular group
-        email: data.email,
-        projectTitle: data.projectTitle,
-        abstract: data.abstract,
-        teamMem1: data.teamMem1,
-        teamMem2: data.teamMem2,
-        teamMem3: data.teamMem3,
-        teamMem4: data.teamMem4,
-        projectLink: data.projectLink,
-        didAdd: true,
-        isApproved: false,
-        completed: false,
-        isEditDetails: false,
-      }),
-    }).then((res) => {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          _id: this.props.groupData._id, //because to add into that particular group
+          email: data.email,
+          projectTitle: data.projectTitle,
+          abstract: data.abstract,
+          teamMem1: data.teamMem1,
+          teamMem2: data.teamMem2,
+          teamMem3: data.teamMem3,
+          teamMem4: data.teamMem4,
+          projectLink: data.projectLink,
+          didAdd: true,
+          isApproved: false,
+          completed: false,
+          isEditDetails: false,
+        }),
+      }
+    ).then((res) => {
       if (res.status == 200) {
         window.open("https://finalize.netlify.app/dashboard", "_top");
       }

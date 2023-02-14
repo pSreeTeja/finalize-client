@@ -3,17 +3,20 @@ import "../../stylesheets/invite.css";
 import Logo from "../../media/Logo.svg";
 class InvitePage extends React.Component {
   addMeToGroup = async () => {
-    const response = await fetch("https://finalize.herokuapp.com/invite", {
-      method: "POST",
+    const response = await fetch(
+      " https://cloudy-handbag-colt.cyclic.app/invite",
+      {
+        method: "POST",
 
-      credentials: "include",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        groupId: this.props.match.params.groupid,
-      }),
-    }).then((res) => {
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          groupId: this.props.match.params.groupid,
+        }),
+      }
+    ).then((res) => {
       if (res.status == 200) {
         window.open("https://finalize.netlify.app/dashboard", "_top");
       }

@@ -9,21 +9,24 @@ class CreateGroup extends React.Component {
     link: "http://bit.ly/245cK",
   };
   createNewGroup = async () => {
-    const p = await fetch("https://finalize.herokuapp.com/creategroupapi", {
-      method: "POST",
+    const p = await fetch(
+      " https://cloudy-handbag-colt.cyclic.app/creategroupapi",
+      {
+        method: "POST",
 
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        projectTitle: this.state.projectTitle,
-        aboutProject: this.state.aboutProject,
-        date: this.state.date,
-        link: this.state.link,
-      }),
-    }).then((res) => {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          projectTitle: this.state.projectTitle,
+          aboutProject: this.state.aboutProject,
+          date: this.state.date,
+          link: this.state.link,
+        }),
+      }
+    ).then((res) => {
       if (res.status == 200) {
         window.open("https://finalize.netlify.app/dashboard", "_top");
       }

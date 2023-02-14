@@ -19,7 +19,7 @@ class AddDetails extends React.Component {
 
   getUserDetails = async () => {
     try {
-      const res = await fetch("https://finalize.herokuapp.com/data", {
+      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app/data", {
         method: "GET",
 
         headers: {
@@ -48,7 +48,7 @@ class AddDetails extends React.Component {
         // console.log("EMAIL FETCHED IS" + this.state.email);
         if (this.props.myTeamDetails.didAdd) {
           const p = await fetch(
-            "https://finalize.herokuapp.com/updatestudentproject",
+            " https://cloudy-handbag-colt.cyclic.app/updatestudentproject",
             {
               method: "POST",
 
@@ -80,7 +80,7 @@ class AddDetails extends React.Component {
           });
         } else {
           const p = await fetch(
-            "https://finalize.herokuapp.com/addstudentproject",
+            " https://cloudy-handbag-colt.cyclic.app/addstudentproject",
             {
               method: "POST",
 
@@ -117,29 +117,32 @@ class AddDetails extends React.Component {
       alert("Please provide a valid Project Link");
       return;
     }
-    const p = await fetch("https://finalize.herokuapp.com/submitproject", {
-      method: "POST",
+    const p = await fetch(
+      " https://cloudy-handbag-colt.cyclic.app/submitproject",
+      {
+        method: "POST",
 
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      credentials: "include",
-      body: JSON.stringify({
-        _id: this.props.groupData._id, //because to add into that particular group
-        email: this.state.email,
-        projectTitle: this.state.projectTitle,
-        abstract: this.state.abstract,
-        teamMem1: this.state.teamMem1,
-        teamMem2: this.state.teamMem2,
-        teamMem3: this.state.teamMem3,
-        teamMem4: this.state.teamMem4,
-        projectLink: this.state.projectLink,
-        didAdd: true,
-        isApproved: true,
-        completed: true,
-      }),
-    }).then((res) => {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          _id: this.props.groupData._id, //because to add into that particular group
+          email: this.state.email,
+          projectTitle: this.state.projectTitle,
+          abstract: this.state.abstract,
+          teamMem1: this.state.teamMem1,
+          teamMem2: this.state.teamMem2,
+          teamMem3: this.state.teamMem3,
+          teamMem4: this.state.teamMem4,
+          projectLink: this.state.projectLink,
+          didAdd: true,
+          isApproved: true,
+          completed: true,
+        }),
+      }
+    ).then((res) => {
       if (res.status == 200) {
         window.open("https://finalize.netlify.app/dashboard", "_top");
       }
