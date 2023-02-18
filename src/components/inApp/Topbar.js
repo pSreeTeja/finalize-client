@@ -15,7 +15,7 @@ class Topbar extends React.Component {
   //   });
   // };
   logoutUser = async () => {
-    await fetch(" https://cloudy-handbag-colt.cyclic.app/logout", {
+    await fetch(" https://cloudy-handbag-colt.cyclic.app//logout", {
       method: "GET",
 
       headers: {
@@ -33,7 +33,7 @@ class Topbar extends React.Component {
   };
   getUserDetails = async () => {
     try {
-      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app/data", {
+      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app//data", {
         method: "GET",
 
         headers: {

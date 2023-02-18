@@ -19,7 +19,7 @@ class AddDetails extends React.Component {
 
   getUserDetails = async () => {
     try {
-      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app/data", {
+      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app//data", {
         method: "GET",
 
         headers: {
@@ -48,7 +48,7 @@ class AddDetails extends React.Component {
         // console.log("EMAIL FETCHED IS" + this.state.email);
         if (this.props.myTeamDetails.didAdd) {
           const p = await fetch(
-            " https://cloudy-handbag-colt.cyclic.app/updatestudentproject",
+            " https://cloudy-handbag-colt.cyclic.app//updatestudentproject",
             {
               method: "POST",
 
@@ -80,7 +80,7 @@ class AddDetails extends React.Component {
           });
         } else {
           const p = await fetch(
-            " https://cloudy-handbag-colt.cyclic.app/addstudentproject",
+            " https://cloudy-handbag-colt.cyclic.app//addstudentproject",
             {
               method: "POST",
 
@@ -118,7 +118,7 @@ class AddDetails extends React.Component {
       return;
     }
     const p = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/submitproject",
+      " https://cloudy-handbag-colt.cyclic.app//submitproject",
       {
         method: "POST",
 

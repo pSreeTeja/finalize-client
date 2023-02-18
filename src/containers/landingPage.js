@@ -28,7 +28,7 @@ class LandingPage extends React.Component {
   };
   loginUser = async () => {
     const response = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/login",
+      "https://cloudy-handbag-colt.cyclic.app//login",
       {
         method: "POST",
         credentials: "include",
@@ -62,7 +62,7 @@ class LandingPage extends React.Component {
   };
   registerUser = () => {
     this.setLoading(true);
-    const response = fetch(" https://cloudy-handbag-colt.cyclic.app/register", {
+    const response = fetch("https://cloudy-handbag-colt.cyclic.app//register", {
       method: "POST",
 
       headers: {
@@ -101,7 +101,7 @@ class LandingPage extends React.Component {
   };
   componentDidMount = async () => {
     const response = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/isAuthenticated",
+      "https://cloudy-handbag-colt.cyclic.app//isAuthenticated",
       {
         method: "GET",
         headers: {

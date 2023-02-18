@@ -19,7 +19,7 @@ class EachGroupCard extends React.Component {
   // };
   deleteGroup = async (_id) => {
     const response = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/deletegroup",
+      " https://cloudy-handbag-colt.cyclic.app//deletegroup",
       {
         method: "POST",
 

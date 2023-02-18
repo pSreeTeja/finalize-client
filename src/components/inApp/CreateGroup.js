@@ -10,7 +10,7 @@ class CreateGroup extends React.Component {
   };
   createNewGroup = async () => {
     const p = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/creategroupapi",
+      " https://cloudy-handbag-colt.cyclic.app//creategroupapi",
       {
         method: "POST",
 

@@ -4,7 +4,7 @@ import Logo from "../../media/Logo.svg";
 class InvitePage extends React.Component {
   addMeToGroup = async () => {
     const response = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/invite",
+      " https://cloudy-handbag-colt.cyclic.app//invite",
       {
         method: "POST",
 
