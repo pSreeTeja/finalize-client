@@ -8,7 +8,7 @@ class Dashboard extends React.Component {
   userData = {};
   getData = async () => {
     try {
-      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app//data", {
+      const res = await fetch(" https://finalize-host.onrender.com/data", {
         method: "GET",
         headers: {
           Accept: "application/json",
@@ -32,7 +32,7 @@ class Dashboard extends React.Component {
   getGroups = async () => {
     try {
       const res = await fetch(
-        " https://cloudy-handbag-colt.cyclic.app//displaygroups",
+        " https://finalize-host.onrender.com/displaygroups",
         {
           method: "GET",
 

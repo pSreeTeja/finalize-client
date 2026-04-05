@@ -15,7 +15,7 @@ class GroupInfo extends React.Component {
   };
   getUserDetails = async () => {
     try {
-      const res = await fetch(" https://cloudy-handbag-colt.cyclic.app//data", {
+      const res = await fetch(" https://finalize-host.onrender.com/data", {
         method: "GET",
 
         headers: {

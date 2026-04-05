@@ -7,7 +7,7 @@ class SubmittedAndDuplicates extends React.Component {
     // console.log("DATA FROM ACCEPT CLICK");
     // console.log(data);
     const p = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/updatestudentproject",
+      " https://finalize-host.onrender.com/updatestudentproject",
       {
         method: "POST",
         headers: {
@@ -39,7 +39,7 @@ class SubmittedAndDuplicates extends React.Component {
   };
   rejectProject = async (data) => {
     const p = await fetch(
-      " https://cloudy-handbag-colt.cyclic.app/rejectproject",
+      " https://finalize-host.onrender.com/rejectproject",
       {
         method: "POST",
 
