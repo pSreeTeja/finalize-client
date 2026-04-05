@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 import "../stylesheets/landingPage.css";
 import CookieConsent from "react-cookie-consent";
 import Logo from "../media/Logo.svg";
@@ -302,4 +303,4 @@ class LandingPage extends React.Component {
   }
 }
 
-export default LandingPage;
+export default withRouter(LandingPage);
