@@ -1,29 +1,98 @@
 .dashboardMainDiv {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  min-height: 100vh;
 }
+
 .contentDiv {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
 }
+
 .topbarDiv {
   height: 130px;
+  min-height: 130px;
+  flex-shrink: 0;
 }
+
 .bodyDiv {
   margin: 0;
   padding: 0;
-  height: calc(100vh - 130px);
+  flex: 1;
+  overflow-y: auto;
+  min-height: calc(100vh - 130px);
 }
 
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .topbarDiv {
+    height: 110px;
+    min-height: 110px;
+  }
+  .bodyDiv {
+    min-height: calc(100vh - 110px);
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .topbarDiv {
     height: 100px;
+    min-height: 100px;
   }
   .bodyDiv {
-    height: calc(100vh - 100px);
+    min-height: calc(100vh - 100px);
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .dashboardMainDiv {
+    flex-direction: column;
+  }
+  .topbarDiv {
+    height: 90px;
+    min-height: 90px;
+  }
+  .bodyDiv {
+    min-height: calc(100vh - 90px);
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .dashboardMainDiv {
+    flex-direction: column;
+    min-height: auto;
+  }
+  .contentDiv {
+    min-height: auto;
+  }
+  .topbarDiv {
+    height: 80px;
+    min-height: 80px;
+  }
+  .bodyDiv {
+    min-height: auto;
+    flex: 1;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .dashboardMainDiv {
+    flex-direction: column;
+  }
+  .topbarDiv {
+    height: 70px;
+    min-height: 70px;
+  }
+  .bodyDiv {
+    flex: 1;
   }
 }

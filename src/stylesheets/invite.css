@@ -2,10 +2,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
 .inviteButton {
   margin-top: 75px;
   width: 20%;
+  min-width: 120px;
   padding: 10px 5px;
   font-size: 25px;
   background-color: #2664ec;
@@ -13,17 +19,30 @@
   border: none;
   color: white;
   cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
 }
+
+.inviteButton:hover {
+  background-color: #1a5ae8;
+}
+
 .inviteAppLogo {
   height: 48px;
+  width: 48px;
   margin-right: 5px;
+  object-fit: contain;
 }
+
 .inviteAppNameDiv {
   display: flex;
 }
+
 .appNameText {
   font-weight: 600;
+  font-size: 20px;
 }
+
 .workspaceText {
   font-size: 16px;
   color: #666666;
@@ -32,10 +51,147 @@
 .inviteApplogoAndNameDiv {
   display: flex;
   flex-direction: row;
+  align-items: center;
   margin-left: 20px;
   margin-top: 15px;
 }
+
 .inviteAppNameDiv {
   display: flex;
   flex-direction: column;
+}
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .inviteButton {
+    width: 22%;
+    font-size: 22px;
+  }
+
+  .appNameText {
+    font-size: 18px;
+  }
+
+  .workspaceText {
+    font-size: 14px;
+  }
+}
+
+/* Desktop: 1366px and below */
+@media screen and (max-width: 1366px) {
+  .inviteButton {
+    width: 25%;
+    font-size: 20px;
+    margin-top: 60px;
+  }
+
+  .inviteAppLogo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .appNameText {
+    font-size: 16px;
+  }
+
+  .workspaceText {
+    font-size: 12px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .inviteButton {
+    width: 30%;
+    font-size: 18px;
+    margin-top: 50px;
+  }
+
+  .inviteAppLogo {
+    height: 36px;
+    width: 36px;
+    margin-right: 4px;
+  }
+
+  .appNameText {
+    font-size: 14px;
+  }
+
+  .workspaceText {
+    font-size: 11px;
+  }
+
+  .inviteApplogoAndNameDiv {
+    margin-left: 15px;
+    margin-top: 12px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .invitePageMainDiv {
+    padding: 15px;
+  }
+
+  .inviteButton {
+    width: 40%;
+    font-size: 16px;
+    margin-top: 40px;
+    min-width: 100px;
+    padding: 8px 4px;
+  }
+
+  .inviteAppLogo {
+    height: 32px;
+    width: 32px;
+    margin-right: 4px;
+  }
+
+  .appNameText {
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .workspaceText {
+    font-size: 10px;
+  }
+
+  .inviteApplogoAndNameDiv {
+    margin-left: 12px;
+    margin-top: 10px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .invitePageMainDiv {
+    padding: 12px;
+  }
+
+  .inviteButton {
+    width: 50%;
+    font-size: 14px;
+    margin-top: 30px;
+    min-width: 90px;
+    padding: 7px 4px;
+  }
+
+  .inviteAppLogo {
+    height: 28px;
+    width: 28px;
+    margin-right: 3px;
+  }
+
+  .appNameText {
+    font-size: 12px;
+  }
+
+  .workspaceText {
+    font-size: 9px;
+  }
+
+  .inviteApplogoAndNameDiv {
+    margin-left: 10px;
+    margin-top: 8px;
+  }
 }

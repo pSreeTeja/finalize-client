@@ -1,23 +1,32 @@
 ::placeholder {
   color: #7a7979;
 }
+
 .registerMainDiv {
   display: flex;
   flex-direction: column;
-
   align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
+
 .studentOrTeacherSelectDiv {
   display: flex;
   align-items: flex-start;
   width: 100%;
+  justify-content: center;
+  margin-bottom: 2%;
 }
+
 .selectFormRegister {
   margin-left: 23%;
   margin-bottom: 5%;
   padding: 10px;
   font-size: 16px;
   border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
 }
 
 .registerOrContinueWithDiv,
@@ -25,6 +34,9 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 2%;
 }
 
 .nameInput,
@@ -36,28 +48,40 @@
   font-weight: 600;
   border-radius: 10px;
   width: 80%;
-  margin: 8px;
+  margin: 8px auto;
   outline: none;
   border: none;
   font-size: 16px;
   background-color: #e9f0f8;
+  box-sizing: border-box;
+  max-width: 100%;
 }
+
 .registerInButtonComponent {
-  padding: 10px 10px;
+  padding: 12px 20px;
   width: 84%;
   font-size: 20px;
   background-color: #4561f1;
   border-radius: 15px;
-  box-shadow: rgba(69, 97, 241, 0.35) 0pc 5px 15px;
   border: none;
   color: white;
   cursor: pointer;
   margin-bottom: 8%;
   margin-top: 4%;
+  box-shadow: rgba(69, 97, 241, 0.35) 0px 5px 15px;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
+
 .registerInButtonComponent:hover {
   background-color: #3355ff;
 }
+
+.registerInButtonComponent:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .googleLogoRegister,
 .facebookLogoRegister {
   padding: 10px 20px;
@@ -66,14 +90,30 @@
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
+
 .googleLogoRegister:hover,
 .facebookLogoRegister:hover {
   background-color: #d1d1d1;
 }
+
 .registerWithSocials {
   margin-top: 6%;
 }
+
+.sideLine {
+  width: 20%;
+  min-width: 30px;
+}
+
+.errorMsg {
+  color: #880808;
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+/* Desktop: 1440px and below */
 @media screen and (max-width: 1440px) {
   .nameInput,
   .emailInput,
@@ -88,29 +128,159 @@
     width: 60%;
   }
 }
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .nameInput,
   .emailInput,
   .passwordInput,
   .confirmPasswordInput {
     width: 80%;
-    margin: 5px;
+    margin: 5px auto;
     font-size: 14px;
+  }
+  .selectFormRegister {
+    margin-left: 12%;
+    font-size: 14px;
+  }
+  .registerInButtonComponent {
+    width: 70%;
+    font-size: 16px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .nameInput,
+  .emailInput,
+  .passwordInput,
+  .confirmPasswordInput {
+    width: 85%;
+  }
+  .selectFormRegister {
+    margin-left: 8%;
+  }
+  .registerInButtonComponent {
+    width: 75%;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .registerMainDiv {
+    padding: 15px;
+  }
+
+  .studentOrTeacherSelectDiv {
+    justify-content: center;
   }
 
   .selectFormRegister {
-    margin-left: 20%;
+    margin-left: 0;
+    margin-bottom: 3%;
+    width: 80%;
     font-size: 14px;
   }
+
+  .nameInput,
+  .emailInput,
+  .passwordInput,
+  .confirmPasswordInput {
+    width: 90%;
+    padding: 12px 10px;
+    font-size: 14px;
+    margin: 6px auto;
+  }
+
+  .registerInButtonComponent {
+    width: 85%;
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+
   .googleLogoRegister,
   .facebookLogoRegister {
-    height: 24px;
+    height: 35px;
+    padding: 8px 15px;
+    margin: 4px;
   }
-  .registerInButtonComponent {
-    width: 40%;
-    font-size: 15px;
+
+  .sideLine {
+    width: 15%;
+    min-width: 20px;
+  }
+
+  .registerOrContinueWithDiv {
+    font-size: 12px;
   }
 }
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .registerMainDiv {
+    padding: 10px;
+  }
+
+  .studentOrTeacherSelectDiv {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .selectFormRegister {
+    margin-left: 0;
+    margin-bottom: 2%;
+    width: 90%;
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .nameInput,
+  .emailInput,
+  .passwordInput,
+  .confirmPasswordInput {
+    width: 95%;
+    padding: 10px 8px;
+    font-size: 13px;
+    margin: 5px auto;
+    border-radius: 8px;
+  }
+
+  .registerInButtonComponent {
+    width: 90%;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin-bottom: 5%;
+    margin-top: 3%;
+  }
+
+  .googleLogoRegister,
+  .facebookLogoRegister {
+    height: 32px;
+    padding: 6px 12px;
+    margin: 3px;
+    font-size: 12px;
+  }
+
+  .registerWithSocials {
+    margin-top: 4%;
+  }
+
+  .sideLine {
+    width: 12%;
+    min-width: 15px;
+  }
+
+  .registerOrContinueWithDiv {
+    font-size: 10px;
+    gap: 5px;
+  }
+
+  .errorMsg {
+    font-size: 12px;
+  }
+}
+
+/* Medium screens: 1080px and below */
 @media screen and (max-width: 1080px) {
   .nameInput,
   .emailInput,

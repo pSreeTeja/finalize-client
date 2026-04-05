@@ -1,9 +1,12 @@
 .bodyDiv {
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
   padding-top: 3%;
+  padding-bottom: 3%;
+  flex: 1;
 }
+
 .contentArea {
   background-color: #f9fbfc;
   box-sizing: border-box;
@@ -12,32 +15,161 @@
   flex-direction: column;
   font-size: 24px;
   width: 100%;
+  min-height: 100%;
 }
 
 .createGroupHeading {
   margin-left: 20px;
   font-size: 40px;
   font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
+
 .headingForDiv {
   padding-bottom: 25px;
   border-bottom: 0.1px solid rgb(218, 218, 218);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   height: 50px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
 .projectDeadline {
   margin-right: 2%;
 }
 
-@media screen and (max-width: 1366px) {
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .bodyDiv {
+    padding-top: 2.5%;
+  }
+
+  .contentArea {
+    padding: 4px 25px;
+    font-size: 22px;
+  }
+
+  .createGroupHeading {
+    font-size: 36px;
+    margin-left: 15px;
+  }
+
   .headingForDiv {
-    height: 32px;
+    height: 45px;
     padding-bottom: 20px;
   }
+}
+
+/* Desktop: 1366px and below */
+@media screen and (max-width: 1366px) {
+  .bodyDiv {
+    padding-top: 2%;
+  }
+
+  .contentArea {
+    padding: 3px 20px;
+    font-size: 20px;
+  }
+
   .createGroupHeading {
     font-size: 30px;
+    margin-left: 12px;
+  }
+
+  .headingForDiv {
+    height: 32px;
+    padding-bottom: 15px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .bodyDiv {
+    padding-top: 2%;
+  }
+
+  .contentArea {
+    padding: 2px 15px;
+    font-size: 18px;
+  }
+
+  .createGroupHeading {
+    font-size: 26px;
+    margin-left: 10px;
+  }
+
+  .headingForDiv {
+    height: 28px;
+    padding-bottom: 12px;
+  }
+
+  .projectDeadline {
+    margin-right: 1%;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .bodyDiv {
+    padding-top: 3%;
+    padding-bottom: 2%;
+  }
+
+  .contentArea {
+    padding: 2px 12px;
+    font-size: 16px;
+  }
+
+  .createGroupHeading {
+    font-size: 22px;
+    margin-left: 8px;
+    margin-bottom: 15px;
+  }
+
+  .headingForDiv {
+    height: auto;
+    padding-bottom: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .projectDeadline {
+    margin-right: 0;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .bodyDiv {
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
+
+  .contentArea {
+    padding: 2px 8px;
+    font-size: 14px;
+  }
+
+  .createGroupHeading {
+    font-size: 18px;
+    margin-left: 5px;
+    margin-bottom: 12px;
+  }
+
+  .headingForDiv {
+    height: auto;
+    padding-bottom: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .projectDeadline {
+    margin-right: 0;
+    font-size: 12px;
   }
 }

@@ -4,16 +4,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 0 20px;
+  box-sizing: border-box;
+  gap: 15px;
+  flex-wrap: wrap;
 }
+
 .searchWithArrowDiv {
   display: flex;
   align-items: center;
   margin-left: 1%;
+  flex: 1;
+  min-width: 150px;
 }
-/* .arrow {
-  margin-right: 6px;
-  width: 40px;
-} */
+
 .searchBar {
   border-radius: 9px;
   width: 450px;
@@ -23,63 +27,94 @@
   border: none;
   font-size: 16px;
   text-align: left;
+  padding: 0 10px;
+  box-sizing: border-box;
+  transition: width 0.3s ease;
 }
+
 .searchBoxDiv {
   display: flex;
   border: 0.1px solid #c0c0c0;
   outline: none;
   box-shadow: rgba(228, 228, 228, 0.2) 0px 7px 29px 0px;
+  border-radius: 9px;
 }
+
 .joinButton {
   margin-left: 1%;
   width: 80px;
   padding: 11px 6px;
   font-size: 20px;
   background-color: #2664ec;
-  box-shadow: rgba(69, 97, 241, 0.35) 0pc 5px 15px;
+  box-shadow: rgba(69, 97, 241, 0.35) 0px 5px 15px;
   border: none;
   color: white;
   cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
 }
-/* .magnifyingGlass {
-  margin-left: 20px;
-} */
+
+.joinButton:hover {
+  background-color: #1a5ae8;
+}
+
 .iconsDiv {
   display: flex;
   align-items: center;
   margin-right: 20px;
   position: relative;
+  gap: 10px;
 }
+
 .notification {
   height: 30px;
   margin-right: 30px;
   cursor: pointer;
+  transition: filter 0.3s ease;
 }
+
 .notificationActive {
   filter: invert(27%) sepia(92%) saturate(2989%) hue-rotate(217deg)
     brightness(97%) contrast(91%);
 }
+
 .notificationPanelComponent {
   position: absolute;
   top: 40px;
   right: 335px;
+  z-index: 100;
 }
+
 .profilePhoto {
   width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-right: 15px;
 }
+
 .nameText {
   font-size: 18px;
   margin-right: 20px;
+  white-space: nowrap;
 }
 
 .logoutIcon {
   cursor: pointer;
   height: 30px;
+  transition: filter 0.3s ease;
 }
+
+.logoutIcon:hover {
+  filter: brightness(0.8);
+}
+
 .logoutText {
   cursor: pointer;
+  margin-right: 10px;
 }
+
 .logoutButton {
   display: flex;
   justify-content: center;
@@ -89,34 +124,290 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   cursor: pointer;
   padding: 10px 15px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
+
 .logoutButton:hover {
   background-color: #2664ec;
   color: white;
 }
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .topDiv {
+    height: 90px;
+    padding: 0 15px;
+  }
+
+  .searchBar {
+    width: 380px;
+    height: 26px;
+    font-size: 14px;
+  }
+
+  .joinButton {
+    width: 75px;
+    font-size: 16px;
+    padding: 9px 5px;
+  }
+
+  .profilePhoto {
+    width: 44px;
+  }
+
+  .nameText {
+    font-size: 16px;
+    margin-right: 15px;
+  }
+
+  .logoutIcon {
+    height: 26px;
+  }
+
+  .logoutButton {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .topDiv {
     height: 72px;
   }
+
   .searchBar {
     width: 320px;
     height: 18px;
     font-size: 12px;
   }
+
   .joinButton {
     width: 80px;
     font-size: 14px;
   }
+
   .profilePhoto {
     width: 36px;
   }
+
   .nameText {
     font-size: 14px;
   }
+
   .logoutIcon {
-    height: 24px !important;
+    height: 24px;
   }
+
   .logoutButton {
     padding: 7px 12px;
+    font-size: 12px;
+  }
+
+  .notification {
+    height: 24px;
+    margin-right: 20px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .topDiv {
+    height: 65px;
+    padding: 0 10px;
+    gap: 8px;
+  }
+
+  .searchWithArrowDiv {
+    min-width: 120px;
+    margin-left: 0;
+  }
+
+  .searchBar {
+    width: 250px;
+    height: 16px;
+    font-size: 11px;
+    margin: 5px;
+  }
+
+  .joinButton {
+    width: 65px;
+    font-size: 12px;
+    padding: 6px 4px;
+  }
+
+  .profilePhoto {
+    width: 32px;
+    margin-right: 8px;
+  }
+
+  .nameText {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+
+  .logoutIcon {
+    height: 20px;
+  }
+
+  .logoutButton {
+    padding: 5px 10px;
+    font-size: 11px;
+  }
+
+  .notification {
+    height: 20px;
+    margin-right: 15px;
+  }
+
+  .notification {
+    margin-right: 10px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .topDiv {
+    height: 55px;
+    padding: 0 8px;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .searchWithArrowDiv {
+    order: 1;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .searchBar {
+    width: 100%;
+    height: 14px;
+    font-size: 10px;
+    margin: 3px;
+    max-width: 250px;
+    flex: 1;
+  }
+
+  .joinButton {
+    order: 2;
+    width: 50px;
+    font-size: 10px;
+    padding: 5px 3px;
+  }
+
+  .iconsDiv {
+    order: 3;
+    margin-right: 0;
+    gap: 8px;
+  }
+
+  .profilePhoto {
+    width: 28px;
+    margin-right: 5px;
+  }
+
+  .nameText {
+    font-size: 10px;
+    margin-right: 5px;
+    display: none;
+  }
+
+  .logoutIcon {
+    height: 18px;
+  }
+
+  .logoutButton {
+    padding: 4px 8px;
+    font-size: 9px;
+  }
+
+  .notification {
+    height: 18px;
+    margin-right: 8px;
+  }
+
+  .notificationPanelComponent {
+    right: 150px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .topDiv {
+    height: 45px;
+    padding: 0 5px;
+    gap: 3px;
+    justify-content: center;
+  }
+
+  .searchWithArrowDiv {
+    order: 1;
+    width: 100%;
+    margin-left: 0;
+    min-width: auto;
+  }
+
+  .searchBar {
+    width: 100%;
+    height: 12px;
+    font-size: 9px;
+    margin: 2px;
+    flex: 1;
+    max-width: none;
+  }
+
+  .searchBoxDiv {
+    width: 100%;
+  }
+
+  .joinButton {
+    order: 2;
+    width: 40px;
+    font-size: 8px;
+    padding: 4px 2px;
+  }
+
+  .iconsDiv {
+    order: 3;
+    margin-right: 0;
+    gap: 5px;
+    position: static;
+  }
+
+  .profilePhoto {
+    width: 24px;
+    height: 24px;
+    margin-right: 3px;
+  }
+
+  .nameText {
+    display: none;
+  }
+
+  .logoutText {
+    display: none;
+  }
+
+  .logoutIcon {
+    height: 16px;
+  }
+
+  .logoutButton {
+    padding: 3px 6px;
+    font-size: 8px;
+  }
+
+  .notification {
+    height: 16px;
+    margin-right: 5px;
+  }
+
+  .notificationPanelComponent {
+    right: auto;
+    left: -150px;
+    top: 35px;
   }
 }

@@ -3,12 +3,20 @@
   flex-direction: row;
   width: 100%;
   justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
 .logoAndAppNameDiv {
   display: flex;
   flex-direction: row;
   align-items: center;
+  flex: 1;
+  min-width: 150px;
 }
+
 .logo {
   border-right: 0.2px solid black;
   padding-right: 10px;
@@ -16,90 +24,115 @@
   height: 48px;
   margin-left: 15%;
 }
+
 .appName {
   font-weight: bold;
   font-size: 22px;
 }
+
 .headerButtonsDiv {
   display: flex;
   flex-direction: row;
   align-items: center;
   width: 20%;
   margin-right: 7%;
+  gap: 10px;
 }
 
 .headerButton {
   font-size: 18px;
   font-weight: bold;
 }
+
 .signInButtonDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .borderBottom {
   background-color: #4561f1;
   width: 40px;
   height: 4px;
   border-radius: 10px;
 }
+
 .borderInactive {
   background-color: #818589;
 }
+
 .signInButton {
   color: #4561f1;
   background: none;
   border: none;
   cursor: pointer;
   margin-bottom: 2px;
+  padding: 5px 10px;
 }
+
 .signInInactive {
   color: #818589;
 }
+
 .registerButton {
   background-color: white;
   border-radius: 25px;
-  padding: 10px;
+  padding: 10px 15px;
   border: none;
-  margin-left: 30%;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  padding-left: 15px;
-  padding-right: 15px;
   cursor: pointer;
   transition-duration: 0.1s;
+  white-space: nowrap;
 }
+
 .registerActive {
   background-color: #4561f1;
   color: white;
 }
+
 .registerButton:hover {
   background-color: #4561f1;
   color: white;
 }
+
 .landingPageImageDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-left: 3.5%;
+  flex: 1;
+  min-width: 250px;
 }
+
 .landingPageText {
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 5%;
+  text-align: center;
 }
+
 .landingPageImage {
   height: 480px;
+  max-width: 100%;
+  width: auto;
 }
+
 .landingPageBodyDiv {
   display: flex;
   flex-direction: row;
   padding: 4% 5%;
+  padding-bottom: 200px;
+  gap: 20px;
 }
+
 .signInRegisterContainerDiv {
   margin-left: 12%;
+  flex: 1;
+  min-width: 300px;
 }
+
 .footer {
   position: fixed;
   left: 0;
@@ -109,39 +142,62 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  gap: 20px;
+  flex-wrap: wrap;
 }
+
 .footerLogoDiv {
   display: flex;
   width: fit-content;
   margin-left: 10%;
+  gap: 10px;
+  align-items: center;
 }
+
 .logoFooter {
   height: 40px;
-  margin-right: 10px;
+  margin-right: 0;
 }
+
 .appNameAndTaglineDiv {
   display: flex;
   flex-direction: column;
 }
+
 .appNameFooter {
   font-size: 18px;
   font-weight: bold;
+  white-space: nowrap;
 }
+
 .taglineFooter {
   font-size: 14px;
+  white-space: nowrap;
 }
+
 .contactFooterDiv {
   display: flex;
   flex-direction: column;
   margin-right: 10%;
 }
+
 .contactHeadingFooter {
   font-weight: bold;
+  white-space: nowrap;
 }
+
+.appEmail {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
 .contactMediaLogo {
   height: 24px;
 }
-/* responsive */
+
+/* Tablet: 1680px and below */
 @media screen and (max-width: 1680px) {
   .headerButtonsDiv {
     margin-right: 5%;
@@ -150,6 +206,8 @@
     font-size: 36px;
   }
 }
+
+/* Smaller Desktop: 1440px and below */
 @media screen and (max-width: 1440px) {
   .landingPageText {
     font-size: 36px;
@@ -162,9 +220,12 @@
     font-size: 16px;
   }
 }
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .logo {
     height: 32px;
+    margin-left: 5%;
   }
   .appName {
     font-size: 18px;
@@ -200,9 +261,12 @@
     padding: 5px 5px;
   }
 }
+
+/* Medium screens: 1080px and below */
 @media screen and (max-width: 1080px) {
   .logo {
     height: 32px;
+    margin-left: 3%;
   }
   .appName {
     font-size: 18px;
@@ -210,12 +274,15 @@
   .signInButton,
   .registerButton {
     font-size: 12px;
+    padding: 8px 12px;
   }
   .landingPageText {
     font-size: 24px;
   }
   .landingPageBodyDiv {
     padding: 3.2% 3%;
+    flex-direction: column;
+    align-items: center;
   }
   .appNameFooter,
   .contactHeadingFooter {
@@ -227,5 +294,144 @@
   }
   .landingPageImage {
     height: 320px;
+  }
+  .landingPageImageDiv {
+    margin-left: 0;
+  }
+  .signInRegisterContainerDiv {
+    margin-left: 0;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .header {
+    padding: 10px;
+  }
+  .logo {
+    height: 28px;
+    margin-left: 0;
+    padding-right: 8px;
+    margin-right: 8px;
+  }
+  .appName {
+    font-size: 16px;
+  }
+  .headerButtonsDiv {
+    width: auto;
+    margin-right: 0;
+  }
+  .signInButton,
+  .registerButton {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  .landingPageText {
+    font-size: 20px;
+    margin-bottom: 10%;
+  }
+  .landingPageBodyDiv {
+    padding: 2% 5%;
+    padding-bottom: 180px;
+  }
+  .landingPageImage {
+    height: 250px;
+  }
+  .footer {
+    padding: 8px 10px;
+    min-height: 80px;
+  }
+  .footerLogoDiv {
+    margin-left: 0;
+  }
+  .contactFooterDiv {
+    margin-right: 0;
+  }
+  .appNameFooter,
+  .contactHeadingFooter {
+    font-size: 11px;
+  }
+  .taglineFooter,
+  .appEmail {
+    font-size: 9px;
+  }
+  .logoFooter {
+    height: 24px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    padding: 10px;
+    gap: 5px;
+  }
+  .logoAndAppNameDiv {
+    width: 100%;
+    justify-content: center;
+  }
+  .logo {
+    height: 24px;
+    margin-left: 0;
+    padding-right: 5px;
+    margin-right: 5px;
+  }
+  .appName {
+    font-size: 14px;
+  }
+  .headerButtonsDiv {
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+  }
+  .signInButton,
+  .registerButton {
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+  .landingPageBodyDiv {
+    flex-direction: column;
+    padding: 15px;
+    padding-bottom: 150px;
+  }
+  .landingPageImageDiv {
+    width: 100%;
+  }
+  .landingPageText {
+    font-size: 18px;
+    margin-bottom: 15%;
+  }
+  .landingPageImage {
+    height: 200px;
+  }
+  .signInRegisterContainerDiv {
+    width: 100%;
+    margin-left: 0;
+  }
+  .footer {
+    min-height: 70px;
+    padding: 5px;
+    justify-content: center;
+    text-align: center;
+  }
+  .footerLogoDiv {
+    flex-direction: column;
+    width: 100%;
+  }
+  .contactFooterDiv {
+    width: 100%;
+    text-align: center;
+  }
+  .appNameFooter,
+  .contactHeadingFooter {
+    font-size: 10px;
+  }
+  .taglineFooter,
+  .appEmail {
+    font-size: 8px;
+  }
+  .logoFooter {
+    height: 20px;
   }
 }

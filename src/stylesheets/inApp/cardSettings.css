@@ -3,21 +3,98 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: center;
+  gap: 5px;
 }
+
 .cardSettingsIcon,
 .deleteicon {
   margin: 5px 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
+
+.cardSettingsIcon:hover,
+.deleteicon:hover {
+  transform: scale(1.2);
+  filter: brightness(0.8);
+}
+
 .deleteicon {
   height: 24px;
+  width: 24px;
 }
 
 .cardSettingsIcon {
   height: 24px;
+  width: 24px;
 }
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .deleteicon {
+    height: 22px;
+    width: 22px;
+    margin: 3px 6px;
+  }
+
+  .cardSettingsIcon {
+    height: 22px;
+    width: 22px;
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .deleteicon {
     height: 18px;
+    width: 18px;
     margin: 0px 8px;
+  }
+
+  .cardSettingsIcon {
+    height: 18px;
+    width: 18px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .deleteicon {
+    height: 16px;
+    width: 16px;
+    margin: 0px 6px;
+  }
+
+  .cardSettingsIcon {
+    height: 16px;
+    width: 16px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .deleteicon {
+    height: 14px;
+    width: 14px;
+    margin: 0px 4px;
+  }
+
+  .cardSettingsIcon {
+    height: 14px;
+    width: 14px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .deleteicon {
+    height: 12px;
+    width: 12px;
+    margin: 0px 2px;
+  }
+
+  .cardSettingsIcon {
+    height: 12px;
+    width: 12px;
   }
 }

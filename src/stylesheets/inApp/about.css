@@ -2,18 +2,94 @@
 .aboutProjectDiv,
 .groupLinkDiv {
   margin: 22px;
+  padding: 10px;
+  box-sizing: border-box;
 }
+
 .projectTitleText,
 .aboutText,
 .groupLinkText {
   font-weight: bold;
   margin-right: 10px;
+  min-width: 100px;
 }
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .projectTitleDiv,
+  .aboutProjectDiv,
+  .groupLinkDiv {
+    font-size: 18px;
+    margin: 18px;
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .projectTitleDiv,
   .aboutProjectDiv,
   .groupLinkDiv {
     font-size: 16px;
     margin-right: 8px;
+    margin: 16px;
+  }
+
+  .projectTitleText,
+  .aboutText,
+  .groupLinkText {
+    font-size: 15px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .projectTitleDiv,
+  .aboutProjectDiv,
+  .groupLinkDiv {
+    font-size: 14px;
+    margin: 12px;
+  }
+
+  .projectTitleText,
+  .aboutText,
+  .groupLinkText {
+    font-size: 13px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .projectTitleDiv,
+  .aboutProjectDiv,
+  .groupLinkDiv {
+    font-size: 12px;
+    margin: 10px;
+    padding: 8px;
+  }
+
+  .projectTitleText,
+  .aboutText,
+  .groupLinkText {
+    font-size: 12px;
+    margin-right: 8px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .projectTitleDiv,
+  .aboutProjectDiv,
+  .groupLinkDiv {
+    font-size: 11px;
+    margin: 8px;
+    padding: 6px;
+  }
+
+  .projectTitleText,
+  .aboutText,
+  .groupLinkText {
+    font-size: 11px;
+    margin-right: 6px;
+    min-width: 80px;
   }
 }

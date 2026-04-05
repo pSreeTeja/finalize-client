@@ -1,65 +1,59 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import GoogleLogo from "../media/GoogleLogo.svg";
 import FacebookLogo from "../media/FacebookLogo.svg";
 import Line from "../media/Line.svg";
 import "../stylesheets/signIn.css";
+
 class SignIn extends React.Component {
-  state = {
-    email: "",
-    pass: "",
-  };
   render() {
+    const { emailRef, passwordRef, setLoginInfo } = this.props;
+
     return (
       <div className="signInMainDiv">
         <input
+          ref={emailRef}
           className="emailInput"
           placeholder="Email"
-          onChange={(e) => {
-            this.setState({ email: e.target.value });
+          type="email"
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              const password = passwordRef?.current?.value;
+              const email = emailRef?.current?.value;
+              setLoginInfo(email, password);
+            }
           }}
-        ></input>
+        />
         <input
+          ref={passwordRef}
           className="passwordInput"
           placeholder="Password"
           type="password"
-          onChange={(e) => {
-            this.setState({ pass: e.target.value });
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') {
+              const password = passwordRef?.current?.value;
+              const email = emailRef?.current?.value;
+              setLoginInfo(email, password);
+            }
           }}
-        ></input>
-        {/* <div className="forgotPasswordDiv">
-          <Link className="forgotPasswordLink">Forgot password?</Link>
-        </div> */}
-        {/* <Link
-          className="signInLink"
-          to="/dashboard"
-          onClickCapture={() =>
-            this.props.setLoginInfo(this.state.email, this.state.pass)
-          }        
-        >
-          <button className="signInButtonInComponent">Sign In</button>
-        </Link> */}
-
+        />
         <button
           className="signInButtonInComponent"
-          onClick={() =>
-            this.props.setLoginInfo(this.state.email, this.state.pass)
-          }
+          onClick={() => {
+            const password = passwordRef?.current?.value;
+            const email = emailRef?.current?.value;
+            setLoginInfo(email, password);
+          }}
         >
           Sign In
         </button>
-
-        {this.props.stat == 401 && (
-          <span className="errorMsg">Invalid Details</span>
-        )}
-
-        <div className="signInContinueWithDiv">
-          <img className="sideLine" src={Line} alt="img" />
-          <span className="orContinueWithText">or continue with</span>
-          <img className="sideLine" src={Line} alt="img" />
+        <div className="signInSocialDiv">
+          <img className="socialLogo" src={FacebookLogo} alt="Facebook" />
+          <img className="socialLogo" src={GoogleLogo} alt="Google" />
         </div>
-        <div className="signInWithMediaDiv">
-          <img className="googleLogoSignIn" src={GoogleLogo} alt="img" />
+        <div className="lineAndTextDiv">
+          <img src={Line} alt="line" className="sideLine" />
+          <span className="orText">OR</span>
+          <img src={Line} alt="line" className="sideLine" />
         </div>
       </div>
     );
@@ -67,3 +61,4 @@ class SignIn extends React.Component {
 }
 
 export default SignIn;
+

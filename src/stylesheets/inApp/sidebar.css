@@ -8,17 +8,23 @@
   font-size: 20px;
   box-sizing: border-box;
   padding: 1%;
+  min-width: 200px;
 }
+
 .inAppLogo {
   height: 48px;
   margin-right: 5px;
 }
+
 .inAppNameDiv {
   display: flex;
 }
+
 .appNameText {
   font-weight: 600;
+  font-size: 18px;
 }
+
 .workspaceText {
   font-size: 16px;
   color: #666666;
@@ -27,37 +33,49 @@
 .inApplogoAndNameDiv {
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
+
 .inAppNameDiv {
   display: flex;
   flex-direction: column;
 }
+
 .topDivSidebarSection {
   display: flex;
   align-items: center;
   margin-top: 10%;
 }
+
 .activitySection {
   margin-top: 20%;
 }
+
 .sectionLogo {
   margin-right: 5px;
-}
-.sectionName,
-.sectionLogo {
   cursor: pointer;
 }
+
+.sectionName {
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .lineUnderActivityDiv {
   width: 100%;
   display: flex;
   justify-content: center;
   margin-top: 15%;
 }
+
 .bottomDivSidebarSection {
   display: flex;
   align-items: center;
   margin-top: 10%;
 }
+
 .createNewButton {
   cursor: pointer;
   padding: 10px 15px;
@@ -66,36 +84,219 @@
   font-size: 20px;
   background-color: #2664ec;
   color: white;
-  transition-duration: 0.1s;
+  transition: background-color 0.3s ease;
+  border-radius: 5px;
+  white-space: nowrap;
 }
+
 .createNewButton:hover {
   background-color: #0051ff;
 }
+
 .settingsSection {
   margin-bottom: 10%;
 }
+
 .helpLink {
   text-decoration: none;
   display: flex;
   align-items: center;
 }
 
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .sidebarMainDiv {
+    font-size: 18px;
+    width: 14%;
+    min-width: 180px;
+  }
+
+  .inAppLogo {
+    height: 40px;
+  }
+
+  .appNameText {
+    font-size: 16px;
+  }
+
+  .workspaceText {
+    font-size: 13px;
+  }
+
+  .createNewButton {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .sidebarMainDiv {
     font-size: 14px;
     width: 13%;
+    min-width: 150px;
+    padding: 0.8%;
   }
+
   .inAppLogo {
     height: 32px;
-    margin-right: 5px;
+    margin-right: 3px;
   }
+
+  .appNameText {
+    font-size: 14px;
+  }
+
   .workspaceText {
-    font-size: 12px !important;
+    font-size: 12px;
   }
+
   .sectionLogo {
     height: 24px;
   }
+
   .createNewButton {
     font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .sidebarMainDiv {
+    font-size: 13px;
+    width: 12%;
+    min-width: 120px;
+    padding: 0.6%;
+  }
+
+  .inAppLogo {
+    height: 28px;
+    margin-right: 3px;
+  }
+
+  .appNameText {
+    font-size: 12px;
+  }
+
+  .workspaceText {
+    font-size: 11px;
+  }
+
+  .createNewButton {
+    font-size: 12px;
+    padding: 5px 8px;
+  }
+
+  .sectionName {
+    font-size: 12px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .sidebarMainDiv {
+    width: 25%;
+    min-width: 90px;
+    font-size: 12px;
+    padding: 0.5%;
+  }
+
+  .inAppLogo {
+    height: 24px;
+    margin-right: 2px;
+  }
+
+  .appNameText {
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .workspaceText {
+    font-size: 9px;
+    display: none;
+  }
+
+  .sectionLogo {
+    height: 20px;
+  }
+
+  .sectionName {
+    font-size: 10px;
+    display: none;
+  }
+
+  .createNewButton {
+    width: 100%;
+    font-size: 10px;
+    padding: 4px 6px;
+  }
+
+  .topDivSidebarSection,
+  .activitySection,
+  .bottomDivSidebarSection {
+    margin-top: 8%;
+  }
+
+  .lineUnderActivityDiv {
+    margin-top: 10%;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .sidebarMainDiv {
+    width: 20%;
+    min-width: 60px;
+    font-size: 10px;
+    padding: 0.3%;
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .inAppLogo {
+    height: 20px;
+    margin-right: 0;
+  }
+
+  .appNameText {
+    font-size: 9px;
+    display: none;
+  }
+
+  .workspaceText {
+    display: none;
+  }
+
+  .inApplogoAndNameDiv {
+    justify-content: center;
+  }
+
+  .sectionLogo {
+    height: 18px;
+  }
+
+  .sectionName {
+    display: none;
+  }
+
+  .createNewButton {
+    font-size: 9px;
+    padding: 3px 5px;
+    width: 100%;
+  }
+
+  .topDivSidebarSection,
+  .activitySection,
+  .bottomDivSidebarSection {
+    margin-top: 5%;
+  }
+
+  .lineUnderActivityDiv {
+    margin-top: 8%;
+  }
+
+  .helpLink {
+    justify-content: center;
   }
 }

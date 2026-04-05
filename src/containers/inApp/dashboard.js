@@ -3,108 +3,107 @@ import Sidebar from "../../components/inApp/Sidebar";
 import Topbar from "../../components/inApp/Topbar";
 import Body from "../../components/inApp/Body";
 import Loading from "../../components/inApp/Loading";
+import Toast from "../../components/Toast";
 import "../../stylesheets/inApp/dashboard.css";
+import { apiAuth, apiGroups, APIError } from "../../utils/api";
+
 class Dashboard extends React.Component {
-  userData = {};
-  getData = async () => {
-    try {
-      const res = await fetch(" https://finalize-host.onrender.com/data", {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-      const data = await res.json();
-      // console.log("myData");
-      // console.log(data);
-      if (!res.status == 200) {
-        const err = new Error(res.err);
-        throw err;
-      }
-      return data;
-    } catch (err) {
-      // console.log(err);
-      this.props.history.push("/");
-    }
-  };
-  getGroups = async () => {
-    try {
-      const res = await fetch(
-        " https://finalize-host.onrender.com/displaygroups",
-        {
-          method: "GET",
-
-          headers: {
-            Accept: "application/json",
-
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-        }
-      );
-      const data = await res.json();
-
-      return data;
-    } catch (err) {}
-  };
-  setLoading = (bool) => {
-    this.setState({ loadingDisplay: bool });
-  };
-
-  componentDidMount() {
-    this.setLoading(true);
-    this.getData()
-      .then((res) => {
-        this.setState({
-          isTeacher: res.isTeacher,
-        });
-      })
-      .catch((err) => window.open("https://finalize.netlify.app", "_top"));
-    this.getGroups().then((res) => {
-      this.setState({
-        yourGroupsData: res,
-      });
-      this.setLoading(false);
-    });
-  }
   state = {
-    //loading
     loadingDisplay: false,
-    //from db
     isTeacher: true,
     groupsActive: true,
     createGroupActive: false,
     groupInfoDisplay: false,
     bodyName: "YOUR GROUPS",
-    //regarding body
-    submittedDisplay: true,
-    duplicatesDisplay: false,
-    approvedDisplay: false,
-    aboutDisplay: false,
-    viewSubmissionDisplay: false,
-    addDetailsDisplay: false,
-    //groupInfo display and data
-    // groupData: {},
-    teamData: {},
+    allGroupsData: [],
     yourGroupsData: [],
+    notificationPanelDisplay: false,
+    toastVisible: false,
+    toastMessage: "",
+    toastType: "error",
   };
+
+  async componentDidMount() {
+    this.setLoading(true);
+    try {
+      const [userData, groupsData] = await Promise.all([
+        this.getData(),
+        this.getGroups(),
+      ]);
+
+      this.setState({
+        isTeacher: userData.isTeacher,
+        yourGroupsData: groupsData || [],
+      });
+
+      this.showToast("Data loaded successfully", "success");
+    } catch (err) {
+      console.error("Failed to load dashboard data:", err);
+
+      if (err instanceof APIError && err.isUnauthorized()) {
+        // Redirect to login
+        this.props.history.push("/");
+      } else {
+        this.showToast(
+          err.message || "Failed to load dashboard data",
+          "error"
+        );
+      }
+    } finally {
+      this.setLoading(false);
+    }
+  }
+
+  getData = async () => {
+    try {
+      const response = await apiAuth.getUserData();
+      if (!response) {
+        throw new Error("Failed to fetch user data");
+      }
+      return response;
+    } catch (err) {
+      console.error("Error fetching user data:", err);
+      throw err;
+    }
+  };
+
+  getGroups = async () => {
+    try {
+      const response = await apiGroups.getGroups();
+      if (!response) {
+        throw new Error("Failed to fetch groups");
+      }
+      return response;
+    } catch (err) {
+      console.error("Error fetching groups:", err);
+      throw err;
+    }
+  };
+
+  setLoading = (bool) => {
+    this.setState({ loadingDisplay: bool });
+  };
+
+  showToast = (message, type = "info") => {
+    this.setState({
+      toastVisible: true,
+      toastMessage: message,
+      toastType: type,
+    });
+  };
+
+  closeToast = () => {
+    this.setState({ toastVisible: false });
+  };
+
   handleCreateGroup = () => {
     this.setState({
       bodyName: "Create Group",
       groupsActive: false,
       createGroupActive: true,
-      submittedDisplay: true,
-      duplicatesDisplay: false,
-      approvedDisplay: false,
-      aboutDisplay: false,
-      viewSubmissionDisplay: false,
-      groupInfoDisplay: false,
-      addDetailsDisplay: false,
-      teamData: {},
     });
   };
+
   handleGroups = () => {
     window.location.reload();
     this.setState({
@@ -112,27 +111,19 @@ class Dashboard extends React.Component {
       groupsActive: true,
       createGroupActive: false,
       groupInfoDisplay: false,
-      projectDeadline: "",
     });
   };
+
   handleGroupInfo = (groupName, projectDeadline) => {
     this.setState({
       bodyName: groupName,
       projectDeadline: projectDeadline,
       groupsActive: false,
       createGroupActive: false,
+      groupInfoDisplay: true,
     });
   };
-  setGroupInfoDisplay = (bool, groupName, projectDeadline) => {
-    let newState = { ...this.state };
-    newState.groupInfoDisplay = bool;
-    newState.bodyName = groupName;
-    newState.projectDeadline = projectDeadline;
-    newState.groupsActive = false;
-    this.setState(newState);
-  };
 
-  //regarding body
   handleSubmissions = () => {
     this.setState({
       submittedDisplay: true,
@@ -143,6 +134,7 @@ class Dashboard extends React.Component {
       addDetailsDisplay: false,
     });
   };
+
   handleDuplicates = () => {
     this.setState({
       submittedDisplay: false,
@@ -153,6 +145,7 @@ class Dashboard extends React.Component {
       addDetailsDisplay: false,
     });
   };
+
   handleApproved = () => {
     this.setState({
       submittedDisplay: false,
@@ -163,6 +156,7 @@ class Dashboard extends React.Component {
       addDetailsDisplay: false,
     });
   };
+
   handleAbout = () => {
     this.setState({
       submittedDisplay: false,
@@ -173,6 +167,7 @@ class Dashboard extends React.Component {
       aboutDisplay: true,
     });
   };
+
   openGroupInfo = (groupData) => {
     this.handleGroupInfo(groupData.projectTitle, groupData.projectDeadline);
     this.setState({
@@ -183,13 +178,10 @@ class Dashboard extends React.Component {
       viewSubmissionDisplay: false,
       addDetailsDisplay: false,
       groupData: groupData,
+      groupInfoDisplay: true,
     });
-    this.setGroupInfoDisplay(
-      true,
-      groupData.projectTitle,
-      groupData.projectDeadline
-    );
   };
+
   handleViewSubmissions = (data) => {
     this.setState({
       submittedDisplay: false,
@@ -201,6 +193,7 @@ class Dashboard extends React.Component {
       teamData: data,
     });
   };
+
   handleAddDetails = () => {
     this.setState({
       submittedDisplay: false,
@@ -209,6 +202,15 @@ class Dashboard extends React.Component {
       viewSubmissionDisplay: false,
       aboutDisplay: false,
       addDetailsDisplay: true,
+    });
+  };
+
+  setGroupInfoDisplay = (bool, groupName, projectDeadline) => {
+    this.setState({
+      groupInfoDisplay: bool,
+      bodyName: groupName,
+      projectDeadline: projectDeadline,
+      groupsActive: false,
     });
   };
 
@@ -240,7 +242,6 @@ class Dashboard extends React.Component {
               aboutDisplay={this.state.aboutDisplay}
               viewSubmissionDisplay={this.state.viewSubmissionDisplay}
               addDetailsDisplay={this.state.addDetailsDisplay}
-              //groupInfo display and data
               groupData={this.state.groupData}
               teamData={this.state.teamData}
               yourGroupsData={this.state.yourGroupsData}
@@ -249,13 +250,18 @@ class Dashboard extends React.Component {
               handleApproved={this.handleApproved}
               handleAbout={this.handleAbout}
               handleViewSubmissions={this.handleViewSubmissions}
-              handleComments={this.handleComments}
               handleAddDetails={this.handleAddDetails}
               openGroupInfo={this.openGroupInfo}
             />
           </div>
         </div>
-        {this.state.loadingDisplay === true && <Loading />}
+        <Toast
+          visible={this.state.toastVisible}
+          message={this.state.toastMessage}
+          type={this.state.toastType}
+          onClose={this.closeToast}
+        />
+        {this.state.loadingDisplay && <Loading />}
       </div>
     );
   }

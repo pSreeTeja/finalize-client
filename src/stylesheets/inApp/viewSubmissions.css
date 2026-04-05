@@ -7,33 +7,44 @@
   padding-bottom: 20px;
   padding-top: 20px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
 }
+
 .projectNameText {
   font-weight: bold;
   margin-right: 25px;
+  min-width: 100px;
 }
+
 .abstractText,
 .teamMembers,
 .commentsText,
 .link {
   font-weight: bold;
   margin-right: 70px;
+  min-width: 100px;
 }
+
 .prototypeText {
   font-weight: bold;
   margin-right: 70px;
+  min-width: 100px;
 }
+
 .commentsField {
   font-size: 24px;
-  /* margin-left: 65px; */
   border-radius: 9px;
   height: 150px;
   width: 60%;
   border: none;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  resize: none;
+  resize: vertical;
+  padding: 10px;
+  box-sizing: border-box;
 }
+
 .name {
   margin-top: 10px;
   width: 70%;
@@ -43,10 +54,34 @@
   font-weight: bold;
   background-color: white;
   border-radius: 30px;
-  box-shadow: rgba(153, 152, 189, 0.35) 0pc 5px 15px;
+  box-shadow: rgba(153, 152, 189, 0.35) 0px 5px 15px;
   border: none;
   margin: 22px;
 }
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .projectTitleDv,
+  .abstractProjectDiv,
+  .prototypeDiv,
+  .commentsProjectDiv,
+  .teamMembersDiv,
+  .linkProjectDiv {
+    font-size: 18px;
+  }
+
+  .name {
+    font-size: 18px;
+    width: 72%;
+  }
+
+  .commentsField {
+    font-size: 22px;
+    width: 65%;
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .projectTitleDv,
   .abstractProjectDiv,
@@ -54,13 +89,141 @@
   .linkProjectDiv {
     font-size: 16px;
   }
+
   .name {
     font-size: 16px;
   }
+
   .abstractText,
   .teamMembers,
   .commentsText,
   .link {
     margin-right: 50px;
+  }
+
+  .commentsField {
+    font-size: 20px;
+    width: 60%;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .projectTitleDv,
+  .abstractProjectDiv,
+  .prototypeDiv,
+  .commentsProjectDiv,
+  .teamMembersDiv,
+  .linkProjectDiv {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 15px 10px;
+    font-size: 14px;
+  }
+
+  .projectNameText,
+  .abstractText,
+  .teamMembers,
+  .commentsText,
+  .link,
+  .prototypeText {
+    margin-right: 0;
+    min-width: auto;
+    margin-bottom: 8px;
+  }
+
+  .name {
+    font-size: 14px;
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .commentsField {
+    font-size: 12px;
+    width: 100%;
+    height: 120px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .projectTitleDv,
+  .abstractProjectDiv,
+  .prototypeDiv,
+  .commentsProjectDiv,
+  .teamMembersDiv,
+  .linkProjectDiv {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .projectNameText,
+  .abstractText,
+  .teamMembers,
+  .commentsText,
+  .link,
+  .prototypeText {
+    margin-right: 0;
+    min-width: auto;
+    margin-bottom: 5px;
+    font-size: 12px;
+  }
+
+  .name {
+    font-size: 13px;
+    width: 100%;
+    margin: 8px 0;
+    padding: 6px;
+  }
+
+  .commentsField {
+    font-size: 11px;
+    width: 100%;
+    height: 110px;
+    padding: 6px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .projectTitleDv,
+  .abstractProjectDiv,
+  .prototypeDiv,
+  .commentsProjectDiv,
+  .teamMembersDiv,
+  .linkProjectDiv {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 5px;
+    font-size: 11px;
+  }
+
+  .projectNameText,
+  .abstractText,
+  .teamMembers,
+  .commentsText,
+  .link,
+  .prototypeText {
+    margin-right: 0;
+    min-width: auto;
+    margin-bottom: 5px;
+    font-size: 11px;
+  }
+
+  .name {
+    font-size: 12px;
+    width: 100%;
+    margin: 6px 0;
+    padding: 5px;
+    border-radius: 20px;
+  }
+
+  .commentsField {
+    font-size: 10px;
+    width: 100%;
+    height: 100px;
+    padding: 6px;
   }
 }

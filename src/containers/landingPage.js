@@ -6,6 +6,8 @@ import LandingPageImage from "../media/LandingPageImage.svg";
 import Loading from "../components/inApp/Loading";
 import Register from "../components/Register";
 import SignIn from "../components/SignIn";
+import Toast from "../components/Toast";
+import { apiAuth, APIError } from "../utils/api";
 
 class LandingPage extends React.Component {
   state = {
@@ -14,106 +16,174 @@ class LandingPage extends React.Component {
     registerDisplay: false,
     name: "",
     email: "",
-    pass: "",
     re_pass: "",
     isTeacher: false,
-    stat: 200,
-    regError: "",
+    toastVisible: false,
+    toastMessage: "",
+    toastType: "error",
   };
+
+  constructor(props) {
+    super(props);
+    this.emailRef = React.createRef();
+    this.passwordRef = React.createRef();
+    this.registerEmailRef = React.createRef();
+    this.registerPasswordRef = React.createRef();
+    this.registerNameRef = React.createRef();
+  }
+
   handleSignin = () => {
     this.setState({ signInDisplay: true, registerDisplay: false });
   };
+
   handleRegister = () => {
     this.setState({ signInDisplay: false, registerDisplay: true });
   };
-  loginUser = async () => {
-    const response = await fetch(
-      "https://finalize-host.onrender.com/login",
-      {
-        method: "POST",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: this.state.email,
-          password: this.state.pass,
-        }),
-      }
-    ).then((res) => {
-      if (res.status == 401) {
-        this.setState({ stat: 401 });
-      } else {
-        window.open("https://finalize.netlify.app/dashboard", "_top");
-      }
-    });
-  };
-  setLoginInfo = (email, pass) => {
-    this.setState(
-      {
-        email: email,
-        pass: pass,
-      },
-      () => this.loginUser()
-    );
-  };
-  setLoading = (bool) => {
-    this.setState({ loadingDisplay: bool });
-  };
-  registerUser = () => {
-    this.setLoading(true);
-    const response = fetch("https://finalize-host.onrender.com/register", {
-      method: "POST",
 
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        password: this.state.pass,
-        isTeacher: this.state.isTeacher,
-      }),
-    }).then((res) => {
-      if (res.status == 201) {
-        window.open("https://finalize.netlify.app", "_top");
+  loginUser = async () => {
+    const email = this.emailRef.current?.value;
+    const password = this.passwordRef.current?.value;
+
+    // Validate input
+    if (!email || !password) {
+      this.showToast("Email and password are required", "warning");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      this.showToast("Please enter a valid email address", "warning");
+      return;
+    }
+
+    this.setState({ loadingDisplay: true });
+
+    try {
+      const response = await apiAuth.login(email, password);
+      
+      // Clear password field for security
+      if (this.passwordRef.current) {
+        this.passwordRef.current.value = "";
       }
-      if (res.status == 422) {
-        this.setState({
-          regError: res.json().then((data) => {
-            return data.error;
-          }),
-        });
-        this.setLoading(false);
+
+      this.showToast("Login successful!", "success");
+      // Navigate to dashboard
+      setTimeout(() => {
+        this.props.history.push("/dashboard");
+      }, 1000);
+    } catch (err) {
+      if (err instanceof APIError) {
+        if (err.isUnauthorized()) {
+          this.showToast("Invalid email or password", "error");
+        } else if (err.isServerError()) {
+          this.showToast("Server error. Please try again later.", "error");
+        } else {
+          this.showToast(err.message, "error");
+        }
+      } else {
+        this.showToast("An unexpected error occurred", "error");
       }
-    });
+    } finally {
+      this.setState({ loadingDisplay: false });
+    }
   };
+
+  setLoginInfo = (email, pass) => {
+    this.emailRef.current.value = email;
+    this.passwordRef.current.value = pass;
+    this.loginUser();
+  };
+
+  registerUser = async () => {
+    const name = this.registerNameRef.current?.value;
+    const email = this.registerEmailRef.current?.value;
+    const password = this.registerPasswordRef.current?.value;
+
+    // Validate input
+    if (!name || !email || !password) {
+      this.showToast("All fields are required", "warning");
+      return;
+    }
+
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      this.showToast("Please enter a valid email address", "warning");
+      return;
+    }
+
+    if (password.length < 6) {
+      this.showToast("Password must be at least 6 characters", "warning");
+      return;
+    }
+
+    this.setState({ loadingDisplay: true });
+
+    try {
+      const response = await apiAuth.register(
+        name,
+        email,
+        password,
+        this.state.isTeacher
+      );
+
+      // Clear form fields
+      if (this.registerNameRef.current) this.registerNameRef.current.value = "";
+      if (this.registerEmailRef.current) this.registerEmailRef.current.value = "";
+      if (this.registerPasswordRef.current) this.registerPasswordRef.current.value = "";
+
+      this.showToast("Registration successful! Please sign in.", "success");
+      
+      setTimeout(() => {
+        this.handleSignin();
+      }, 1500);
+    } catch (err) {
+      if (err instanceof APIError) {
+        if (err.isConflict()) {
+          this.showToast("Email already exists", "error");
+        } else if (err.isValidationError()) {
+          this.showToast(
+            err.message || "Please check your information",
+            "error"
+          );
+        } else if (err.isServerError()) {
+          this.showToast("Server error. Please try again later.", "error");
+        } else {
+          this.showToast(err.message, "error");
+        }
+      } else {
+        this.showToast("An unexpected error occurred", "error");
+      }
+    } finally {
+      this.setState({ loadingDisplay: false });
+    }
+  };
+
   setRegisterInfo = (name, email, pass, isTeacher) => {
-    this.setState(
-      {
-        name: name,
-        email: email,
-        pass: pass,
-        isTeacher: isTeacher,
-      },
-      () => this.registerUser()
-    );
+    this.registerNameRef.current.value = name;
+    this.registerEmailRef.current.value = email;
+    this.registerPasswordRef.current.value = pass;
+    this.setState({ isTeacher }, () => this.registerUser());
   };
-  componentDidMount = async () => {
-    const response = await fetch(
-      "https://finalize-host.onrender.com/isAuthenticated",
-      {
-        method: "GET",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      }
-    ).then((res) => {
-      if (res.status == 200) {
-        window.open("https://finalize.netlify.app/dashboard", "_top");
-      }
+
+  showToast = (message, type = "info") => {
+    this.setState({
+      toastVisible: true,
+      toastMessage: message,
+      toastType: type,
     });
+  };
+
+  closeToast = () => {
+    this.setState({ toastVisible: false });
+  };
+
+  componentDidMount = async () => {
+    try {
+      const response = await apiAuth.isAuthenticated();
+      // User is already authenticated, redirect to dashboard
+      this.props.history.push("/dashboard");
+    } catch (err) {
+      // User is not authenticated, stay on login page
+      // This is expected behavior
+    }
   };
 
   render() {
@@ -171,11 +241,17 @@ class LandingPage extends React.Component {
             {this.state.registerDisplay && (
               <Register
                 setRegisterInfo={this.setRegisterInfo}
-                regError={this.state.regError}
+                registerNameRef={this.registerNameRef}
+                registerEmailRef={this.registerEmailRef}
+                registerPasswordRef={this.registerPasswordRef}
               />
             )}
             {this.state.signInDisplay && (
-              <SignIn setLoginInfo={this.setLoginInfo} stat={this.state.stat} />
+              <SignIn
+                setLoginInfo={this.setLoginInfo}
+                emailRef={this.emailRef}
+                passwordRef={this.passwordRef}
+              />
             )}
           </div>
         </div>
@@ -208,11 +284,18 @@ class LandingPage extends React.Component {
           <a
             href="https://www.websitepolicies.com/policies/view/bwrZtBy7"
             target="_blank"
+            rel="noopener noreferrer"
             style={{ color: "white" }}
           >
             Our Cookie Policy
           </a>
         </CookieConsent>
+        <Toast
+          visible={this.state.toastVisible}
+          message={this.state.toastMessage}
+          type={this.state.toastType}
+          onClose={this.closeToast}
+        />
         {this.state.loadingDisplay && <Loading />}
       </div>
     );

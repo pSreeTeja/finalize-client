@@ -1,54 +1,73 @@
 import React, { Component } from "react";
 import User from "../../media/User.svg";
 import "../../stylesheets/inApp/topbar.css";
+import Toast from "../Toast";
+import { apiAuth, apiGroups, APIError } from "../../utils/api";
+
 class Topbar extends React.Component {
   state = {
     name: "",
     notificationPanelDisplay: false,
     inviteUrl: "",
+    toastVisible: false,
+    toastMessage: "",
+    toastType: "error",
   };
-  // handleNotificationDisplay = () => {
-  //   let bool = this.state.notificationPanelDisplay;
-  //   this.setState({
-  //     name: "Sadia Firdous",
-  //     notificationPanelDisplay: !bool,
-  //   });
-  // };
-  logoutUser = async () => {
-    await fetch(" https://finalize-host.onrender.com/logout", {
-      method: "GET",
 
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    })
-      .then((res) => {
-        if (res.status == 200) {
-          window.open("https://finalize.netlify.app", "_top");
-        }
-      })
-      .catch((err) => {});
+  logoutUser = async () => {
+    try {
+      await apiAuth.logout();
+      this.showToast("Logged out successfully", "success");
+      
+      // Clear localStorage
+      localStorage.clear();
+      sessionStorage.clear();
+      
+      // Redirect to login
+      setTimeout(() => {
+        this.props.history.push("/");
+      }, 1000);
+    } catch (err) {
+      console.error("Logout error:", err);
+      // Still redirect even if logout fails on backend
+      localStorage.clear();
+      sessionStorage.clear();
+      this.props.history.push("/");
+    }
   };
+
   getUserDetails = async () => {
     try {
-      const res = await fetch(" https://finalize-host.onrender.com/data", {
-        method: "GET",
-
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        credentials: "include",
-      });
-      const data = await res.json();
-      // console.log("CURRENT USER DETAILS");
-      // console.log(data);
-      return data;
+      const response = await apiAuth.getUserData();
+      if (!response) {
+        throw new Error("Failed to fetch user details");
+      }
+      return response;
     } catch (err) {
-      // console.log(err);
+      console.error("Error fetching user details:", err);
+      throw err;
     }
+  };
+
+  componentDidMount = async () => {
+    try {
+      const userData = await this.getUserDetails();
+      this.setState({ name: userData.name || "User" });
+    } catch (err) {
+      console.error("Failed to load user details", err);
+    }
+  };
+
+  showToast = (message, type = "info") => {
+    this.setState({
+      toastVisible: true,
+      toastMessage: message,
+      toastType: type,
+    });
+  };
+
+  closeToast = () => {
+    this.setState({ toastVisible: false });
   };
   sendToInviteLink = () => {
     window.location = this.state.inviteUrl;

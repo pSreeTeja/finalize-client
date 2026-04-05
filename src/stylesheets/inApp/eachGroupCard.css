@@ -6,36 +6,46 @@
   background-color: white;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 22%;
-  /* height: 150px; */
+  min-width: 200px;
   margin-top: 10px;
   margin-right: 1.5%;
   margin-bottom: 1%;
   cursor: pointer;
   justify-content: space-between;
   height: 200px;
-  transition-duration: 0.1s;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-sizing: border-box;
 }
+
 .groupDiv:hover {
   background-color: #e0e0e0;
+  transform: translateY(-5px);
 }
+
 .projectDetails {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
+
 .projectSettingsDiv {
   display: flex;
-  justify-content: right;
+  justify-content: flex-end;
 }
+
 .projectSettingsIcon {
   height: 6px;
+  cursor: pointer;
 }
+
 .projectName {
   margin-top: 15px;
   font-size: 25px;
   font-weight: bold;
   padding-left: 20px;
+  word-break: break-word;
 }
+
 .aboutTheProject {
   margin-top: 6px;
   margin-left: 20px;
@@ -43,7 +53,13 @@
   width: 80%;
   word-wrap: break-word;
   color: #707070;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
+
 .projectStatsDiv {
   display: flex;
   flex-direction: row;
@@ -51,27 +67,184 @@
   align-items: center;
   margin-top: 30px;
   margin-left: 20px;
+  gap: 5px;
 }
+
 .peopleIconFirst,
 .peopleIconSecond,
 .peopleIconNumber {
   height: 25px;
 }
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .groupDiv {
+    width: 23%;
+    min-width: 180px;
+    height: 180px;
+    padding: 18px 8px;
+  }
+
+  .projectName {
+    font-size: 22px;
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+
+  .aboutTheProject {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 4px;
+  }
+
+  .peopleIconFirst,
+  .peopleIconSecond,
+  .peopleIconNumber {
+    height: 22px;
+  }
+
+  .projectStatsDiv {
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .groupDiv {
     height: 120px;
     width: 20%;
+    min-width: 160px;
+    padding: 15px 8px;
   }
+
   .projectName {
     font-size: 18px;
     margin-top: 8px;
+    padding-left: 12px;
   }
+
   .aboutTheProject {
     font-size: 14px;
+    margin-left: 12px;
+    margin-top: 3px;
   }
+
   .peopleIconFirst,
   .peopleIconSecond,
   .peopleIconNumber {
     height: 20px;
+  }
+
+  .projectStatsDiv {
+    margin-top: 15px;
+    margin-left: 12px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .groupDiv {
+    width: 30%;
+    min-width: 150px;
+    height: 140px;
+    padding: 14px 8px;
+  }
+
+  .projectName {
+    font-size: 16px;
+    margin-top: 8px;
+    padding-left: 10px;
+  }
+
+  .aboutTheProject {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 3px;
+  }
+
+  .peopleIconFirst,
+  .peopleIconSecond,
+  .peopleIconNumber {
+    height: 18px;
+  }
+
+  .projectStatsDiv {
+    margin-top: 12px;
+    margin-left: 10px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .groupDiv {
+    width: 45%;
+    min-width: 140px;
+    height: auto;
+    padding: 12px 8px;
+    margin-right: 2%;
+    margin-bottom: 2%;
+  }
+
+  .projectName {
+    font-size: 14px;
+    margin-top: 8px;
+    padding-left: 10px;
+  }
+
+  .aboutTheProject {
+    font-size: 11px;
+    margin-left: 10px;
+    margin-top: 3px;
+    width: 90%;
+  }
+
+  .peopleIconFirst,
+  .peopleIconSecond,
+  .peopleIconNumber {
+    height: 16px;
+  }
+
+  .projectStatsDiv {
+    margin-top: 10px;
+    margin-left: 10px;
+    gap: 3px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .groupDiv {
+    width: 100%;
+    min-width: auto;
+    height: auto;
+    padding: 10px 8px;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .projectName {
+    font-size: 13px;
+    margin-top: 8px;
+    padding-left: 8px;
+  }
+
+  .aboutTheProject {
+    font-size: 10px;
+    margin-left: 8px;
+    margin-top: 3px;
+    width: 95%;
+  }
+
+  .peopleIconFirst,
+  .peopleIconSecond,
+  .peopleIconNumber {
+    height: 14px;
+  }
+
+  .projectStatsDiv {
+    margin-top: 8px;
+    margin-left: 8px;
+    gap: 2px;
   }
 }

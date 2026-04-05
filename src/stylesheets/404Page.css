@@ -3,17 +3,133 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
 }
+
 .img {
   height: 320px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
 }
+
 .pageNotFoundText {
   font-size: 40px;
   font-weight: bold;
   margin-top: 5%;
+  word-wrap: break-word;
 }
+
 .backToHomeLink {
   margin-top: 1%;
   font-size: 24px;
+  text-decoration: none;
+  color: #2664ec;
+  transition: color 0.3s ease;
+}
+
+.backToHomeLink:hover {
+  color: #1a5ae8;
+  text-decoration: underline;
+}
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .img {
+    height: 300px;
+  }
+
+  .pageNotFoundText {
+    font-size: 36px;
+  }
+
+  .backToHomeLink {
+    font-size: 22px;
+  }
+}
+
+/* Desktop: 1366px and below */
+@media screen and (max-width: 1366px) {
+  .img {
+    height: 280px;
+  }
+
+  .pageNotFoundText {
+    font-size: 32px;
+  }
+
+  .backToHomeLink {
+    font-size: 20px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .mainDiv404 {
+    padding: 15px;
+  }
+
+  .img {
+    height: 250px;
+  }
+
+  .pageNotFoundText {
+    font-size: 28px;
+    margin-top: 3%;
+  }
+
+  .backToHomeLink {
+    font-size: 18px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .mainDiv404 {
+    padding: 15px;
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .img {
+    height: 200px;
+  }
+
+  .pageNotFoundText {
+    font-size: 24px;
+    margin-top: 5%;
+  }
+
+  .backToHomeLink {
+    font-size: 16px;
+    margin-top: 3%;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .mainDiv404 {
+    padding: 12px;
+    min-height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  .img {
+    height: 150px;
+  }
+
+  .pageNotFoundText {
+    font-size: 20px;
+    margin-top: 5%;
+  }
+
+  .backToHomeLink {
+    font-size: 14px;
+    margin-top: 5%;
+  }
 }

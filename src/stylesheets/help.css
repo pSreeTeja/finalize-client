@@ -4,24 +4,134 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
+  box-sizing: border-box;
 }
+
 .helpPageLogo {
   height: 100px;
+  width: 100px;
+  object-fit: contain;
 }
+
 .bottomHelpDiv {
   display: flex;
   justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
 }
+
 .infoList {
   width: 50%;
   font-size: 24px;
+  line-height: 1.6;
 }
+
+.infoList li {
+  margin-bottom: 15px;
+}
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .topHelpDiv {
+    height: 28%;
+  }
+
+  .helpPageLogo {
+    height: 90px;
+    width: 90px;
+  }
+
+  .infoList {
+    width: 55%;
+    font-size: 22px;
+  }
+}
+
+/* Desktop: 1366px and below */
 @media screen and (max-width: 1366px) {
   .helpPageLogo {
     height: 80px;
+    width: 80px;
   }
+
   .infoList {
-    width: 50%;
+    width: 60%;
     font-size: 18px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .topHelpDiv {
+    height: 25%;
+    padding: 15px;
+  }
+
+  .helpPageLogo {
+    height: 70px;
+    width: 70px;
+  }
+
+  .bottomHelpDiv {
+    padding: 15px;
+  }
+
+  .infoList {
+    width: 70%;
+    font-size: 16px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .topHelpDiv {
+    height: 20%;
+    padding: 12px;
+  }
+
+  .helpPageLogo {
+    height: 60px;
+    width: 60px;
+  }
+
+  .bottomHelpDiv {
+    padding: 12px;
+  }
+
+  .infoList {
+    width: 85%;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .infoList li {
+    margin-bottom: 12px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .topHelpDiv {
+    height: 15%;
+    padding: 10px;
+  }
+
+  .helpPageLogo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .bottomHelpDiv {
+    padding: 10px;
+  }
+
+  .infoList {
+    width: 95%;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+
+  .infoList li {
+    margin-bottom: 10px;
   }
 }

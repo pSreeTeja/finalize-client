@@ -6,4 +6,47 @@
   flex-wrap: wrap;
   overflow-y: auto;
   justify-content: flex-start;
+  padding: 20px;
+  box-sizing: border-box;
+  gap: 15px;
+}
+
+/* Desktop: 1440px and below */
+@media screen and (max-width: 1440px) {
+  .groupsListMainDiv {
+    padding: 18px;
+    gap: 12px;
+  }
+}
+
+/* Desktop: 1366px and below */
+@media screen and (max-width: 1366px) {
+  .groupsListMainDiv {
+    padding: 15px;
+    gap: 10px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .groupsListMainDiv {
+    padding: 12px;
+    gap: 10px;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .groupsListMainDiv {
+    padding: 10px;
+    gap: 10px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .groupsListMainDiv {
+    padding: 8px;
+    gap: 8px;
+  }
 }

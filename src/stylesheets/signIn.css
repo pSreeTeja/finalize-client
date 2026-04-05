@@ -1,21 +1,31 @@
 ::placeholder {
   color: #7a7979;
 }
+
 .signInMainDiv {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 100%;
 }
+
 .signInWithMediaDiv,
 .signInContinueWithDiv {
   justify-content: center;
   display: flex;
   flex-direction: row;
   margin-top: 4%;
+  gap: 10px;
+  flex-wrap: wrap;
 }
-.orContinueWithText {
+
+.orContinueWithText,
+.orText {
   margin: 5px;
+  white-space: nowrap;
 }
 
 .emailInput,
@@ -27,23 +37,29 @@
   border: none;
   background-color: #e9f0f8;
   width: 80%;
-  margin: 10px;
+  margin: 10px auto;
   outline: none;
   font-size: 16px;
+  box-sizing: border-box;
+  max-width: 100%;
 }
+
 .forgotPasswordDiv {
   width: 84%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
 }
+
 .forgotPasswordLink {
   text-decoration: none;
   color: #7a7979;
   margin-bottom: 5%;
+  font-size: 14px;
 }
+
 .signInButtonInComponent {
-  padding: 10px 10px;
+  padding: 12px 20px;
   width: 84%;
   font-size: 20px;
   background-color: #4561f1;
@@ -53,12 +69,24 @@
   box-shadow: rgba(69, 97, 241, 0.35) 0px 5px 15px;
   cursor: pointer;
   margin-bottom: 4%;
+  margin-top: 2%;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
 }
+
 .signInButtonInComponent:hover {
   background-color: #3355ff;
 }
+
+.signInButtonInComponent:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .errorMsg {
   color: #880808;
+  font-size: 14px;
+  margin: 10px 0;
 }
 
 .googleLogoSignIn,
@@ -69,12 +97,20 @@
   margin: 5px;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .googleLogoSignIn:hover,
 .facebookLogoSignIn:hover {
   background-color: #d1d1d1;
 }
+
+.sideLine {
+  width: 20%;
+  min-width: 30px;
+}
+
+/* Large screens: 1680px and above */
 @media screen and (max-width: 1680px) {
   .orContinueWithText {
     margin: 5px;
@@ -84,6 +120,8 @@
     width: 20%;
   }
 }
+
+/* Desktop: 1440px and below */
 @media screen and (max-width: 1440px) {
   .emailInput,
   .passwordInput {
@@ -99,6 +137,115 @@
     font-size: 14px;
   }
 }
+
+/* Desktop: 1366px and below */
+@media screen and (max-width: 1366px) {
+  .emailInput,
+  .passwordInput {
+    width: 80%;
+    margin: 8px auto;
+    font-size: 15px;
+  }
+  .signInButtonInComponent {
+    width: 60%;
+    font-size: 16px;
+  }
+}
+
+/* Medium screens: 1080px and below */
+@media screen and (max-width: 1080px) {
+  .emailInput,
+  .passwordInput {
+    width: 85%;
+  }
+  .signInButtonInComponent {
+    width: 70%;
+  }
+}
+
+/* Tablet: 768px and below */
+@media screen and (max-width: 768px) {
+  .signInMainDiv {
+    padding: 15px;
+  }
+  .emailInput,
+  .passwordInput {
+    width: 90%;
+    padding: 15px 10px;
+    font-size: 16px;
+    margin: 8px auto;
+  }
+  .signInButtonInComponent {
+    width: 80%;
+    font-size: 16px;
+    padding: 12px 15px;
+  }
+  .sideLine {
+    width: 15%;
+    min-width: 20px;
+  }
+  .orContinueWithText,
+  .orText {
+    font-size: 12px;
+  }
+  .googleLogoSignIn,
+  .facebookLogoSignIn {
+    height: 35px;
+    padding: 8px 15px;
+    margin: 4px;
+  }
+}
+
+/* Mobile: 480px and below */
+@media screen and (max-width: 480px) {
+  .signInMainDiv {
+    padding: 10px;
+  }
+  .emailInput,
+  .passwordInput {
+    width: 95%;
+    padding: 12px 10px;
+    font-size: 14px;
+    margin: 6px auto;
+    border-radius: 8px;
+  }
+  .signInButtonInComponent {
+    width: 90%;
+    font-size: 14px;
+    padding: 10px 12px;
+    margin-bottom: 3%;
+  }
+  .forgotPasswordDiv {
+    width: 95%;
+  }
+  .forgotPasswordLink {
+    font-size: 12px;
+  }
+  .sideLine {
+    width: 12%;
+    min-width: 15px;
+  }
+  .orContinueWithText,
+  .orText {
+    font-size: 11px;
+    margin: 3px;
+  }
+  .signInWithMediaDiv,
+  .signInContinueWithDiv {
+    gap: 5px;
+  }
+  .googleLogoSignIn,
+  .facebookLogoSignIn {
+    height: 32px;
+    padding: 6px 12px;
+    margin: 3px;
+    font-size: 12px;
+  }
+  .errorMsg {
+    font-size: 12px;
+  }
+}
+
 @media screen and (max-width: 1366px) {
   .emailInput,
   .passwordInput {
